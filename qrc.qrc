@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/">
+        <file>1.getting_started/2.1hello_triangle/hello_triangle.frag</file>
+        <file>1.getting_started/2.1hello_triangle/hello_triangle.vert</file>
+        <file>1.getting_started/2.1hello_triangle/hello_triangle1.frag</file>
+        <file>1.getting_started/3.2shaders_interpolation/shaders_interpolation.frag</file>
+        <file>1.getting_started/3.2shaders_interpolation/shaders_interpolation.vert</file>
+        <file>1.getting_started/3.2shaders_interpolation/shaders_interpolation1.vert</file>
+        <file>1.getting_started/3.2shaders_interpolation/shaders_interpolation1.frag</file>
+        <file>1.getting_started/4.1textures/textures.frag</file>
+        <file>1.getting_started/4.1textures/textures.vert</file>
+        <file>1.getting_started/4.1textures/awesomeface.png</file>
+        <file>1.getting_started/4.1textures/container.jpg</file>
+        <file>1.getting_started/4.4textures_exercise2/textures_exercise2.frag</file>
+        <file>1.getting_started/4.4textures_exercise2/textures_exercise2.vert</file>
+        <file>1.getting_started/4.6textures_exercise4/textures_exercise4.frag</file>
+        <file>1.getting_started/4.6textures_exercise4/textures_exercise4.vert</file>
+        <file>1.getting_started/5.1transformations/transformations.frag</file>
+        <file>1.getting_started/5.1transformations/transformations.vert</file>
+    </qresource>
+</RCC>

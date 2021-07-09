@@ -11,7 +11,7 @@ class HelloTriangleExercise1 : public QOpenGLWidget, protected QOpenGLFunctions_
 {
     Q_OBJECT
 public:
-    explicit HelloTriangleExercise1(QWidget *parent = nullptr);
+    Q_INVOKABLE HelloTriangleExercise1(QWidget *parent = nullptr);
     ~HelloTriangleExercise1();
 
 protected:

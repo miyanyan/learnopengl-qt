@@ -13,7 +13,7 @@ class Textures : public QOpenGLWidget, protected QOpenGLFunctions_3_3_Core
 {
     Q_OBJECT
 public:
-    explicit Textures(QWidget *parent = nullptr);
+    Q_INVOKABLE Textures(QWidget *parent = nullptr);
     ~Textures();
 protected:
     virtual void initializeGL() override;

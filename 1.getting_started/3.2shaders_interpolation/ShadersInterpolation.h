@@ -12,7 +12,7 @@ class ShadersInterpolation : public QOpenGLWidget, protected QOpenGLFunctions_3_
 {
     Q_OBJECT
 public:
-    explicit ShadersInterpolation(QWidget *parent = nullptr);
+    Q_INVOKABLE ShadersInterpolation(QWidget *parent = nullptr);
     ~ShadersInterpolation();
 protected:
     virtual void initializeGL() override;

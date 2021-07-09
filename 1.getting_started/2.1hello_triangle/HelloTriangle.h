@@ -11,7 +11,7 @@ class HelloTriangle : public QOpenGLWidget, protected QOpenGLFunctions_3_3_Core
 {
     Q_OBJECT
 public:
-    explicit HelloTriangle(QWidget *parent = nullptr);
+    Q_INVOKABLE HelloTriangle(QWidget *parent = nullptr);
     ~HelloTriangle();
 protected:
     virtual void initializeGL() override;

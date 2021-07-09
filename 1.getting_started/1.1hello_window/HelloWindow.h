@@ -3,12 +3,13 @@
 
 #include <QOpenGLWidget>
 #include <QOpenGLFunctions>
+#include <QMetaMethod>
 
 class HelloWindow : public QOpenGLWidget, protected QOpenGLFunctions
 {
     Q_OBJECT
 public:
-    explicit HelloWindow(QWidget *parent = nullptr);
+    Q_INVOKABLE HelloWindow(QWidget *parent = nullptr);
 
 protected:
     void initializeGL() override;

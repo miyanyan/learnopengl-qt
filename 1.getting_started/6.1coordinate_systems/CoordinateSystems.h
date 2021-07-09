@@ -1,5 +1,5 @@
-#ifndef TRANSFORMATIONS_H
-#define TRANSFORMATIONS_H
+#ifndef COORDINATESYSTEMS_H
+#define COORDINATESYSTEMS_H
 
 #include <QOpenGLWidget>
 #include <QOpenGLFunctions_3_3_Core>
@@ -12,12 +12,12 @@
 #include <QMouseEvent>
 #include <memory>
 
-class Transformations : public QOpenGLWidget, protected QOpenGLFunctions_3_3_Core
+class CoordinateSystems : public QOpenGLWidget, protected QOpenGLFunctions_3_3_Core
 {
     Q_OBJECT
 public:
-    Q_INVOKABLE Transformations(QWidget *parent = nullptr);
-    ~Transformations();
+    Q_INVOKABLE CoordinateSystems(QWidget *parent = nullptr);
+    ~CoordinateSystems();
 protected:
     virtual void initializeGL() override;
     virtual void resizeGL(int w, int h) override;
@@ -35,11 +35,11 @@ private:
 
     std::unique_ptr<QOpenGLTexture> m_texture[2];
 
-    QMatrix4x4 m_transform;
+    QMatrix4x4 m_model;
+    QMatrix4x4 m_view;
+    QMatrix4x4 m_projection;
 
     float m_scale;
-
-    QPoint m_mousePos;
 };
 
-#endif // TRANSFORMATIONS_H
+#endif // COORDINATESYSTEMS_H

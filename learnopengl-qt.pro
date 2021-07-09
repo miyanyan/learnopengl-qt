@@ -28,6 +28,9 @@ SOURCES += \
     1.getting_started/4.5textures_exercise3/TexturesExercise3.cpp \
     1.getting_started/4.6textures_exercise4/TexturesExercise4.cpp \
     1.getting_started/5.1transformations/Transformations.cpp \
+    1.getting_started/6.1coordinate_systems/CoordinateSystems.cpp \
+    1.getting_started/6.2coordinate_systems_depth/CoordinateSystemsDepth.cpp \
+    1.getting_started/6.3coordinate_systems_exercise/CoordinateSystemsExercise.cpp \
     main.cpp \
     MainWindow.cpp
 
@@ -44,6 +47,9 @@ HEADERS += \
     1.getting_started/4.5textures_exercise3/TexturesExercise3.h \
     1.getting_started/4.6textures_exercise4/TexturesExercise4.h \
     1.getting_started/5.1transformations/Transformations.h \
+    1.getting_started/6.1coordinate_systems/CoordinateSystems.h \
+    1.getting_started/6.2coordinate_systems_depth/CoordinateSystemsDepth.h \
+    1.getting_started/6.3coordinate_systems_exercise/CoordinateSystemsExercise.h \
     MainWindow.h
 
 # Default rules for deployment.
@@ -53,3 +59,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     qrc.qrc
+

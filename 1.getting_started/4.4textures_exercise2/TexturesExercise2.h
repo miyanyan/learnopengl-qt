@@ -13,7 +13,7 @@ class TexturesExercise2 : public QOpenGLWidget, protected QOpenGLFunctions_3_3_C
 {
     Q_OBJECT
 public:
-    explicit TexturesExercise2(QWidget *parent = nullptr);
+    Q_INVOKABLE TexturesExercise2(QWidget *parent = nullptr);
     ~TexturesExercise2();
 protected:
     virtual void initializeGL() override;

@@ -1,20 +1,16 @@
 #include "MainWindow.h"
 
 #include <QGridLayout>
+#include <QMessageBox>
+#include <QListView>
 
 MainWindow::MainWindow(QWidget *parent)
     : QWidget(parent),
       m_openglWidget(nullptr),
-      m_layout(nullptr)
+      m_layout(nullptr),
+      m_combox(new QComboBox(this))
 {
-    m_combox = new QComboBox(this);
-    QStringList comboxList;
-    comboxList << "HelloWindow" << "HelloTriangle" << "HelloTriangleIndexed"
-               << "HelloTriangleExercise1" << "HelloTriangleExercise2" << "HelloTriangleExercise3"
-               << "ShadersInterpolation"
-               << "Textures" << "TexturesExercise2" << "TexturesExercise3" << "TexturesExercise4"
-               << "Transformations";
-    m_combox->addItems(comboxList);
+    registerMetaObject();
 
     m_container = new QWidget(this);
     m_layout = new QGridLayout(m_container);
@@ -25,8 +21,10 @@ MainWindow::MainWindow(QWidget *parent)
 
     showGLWindows(0);
 
+    QListView *view = new QListView(m_combox);
+    view->setStyleSheet("QListView::item{height: 30px}");
+    m_combox->setView(view);
     connect(m_combox, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &MainWindow::showGLWindows);
-
 }
 
 MainWindow::~MainWindow()
@@ -38,48 +36,39 @@ void MainWindow::showGLWindows(int index)
     if(m_openglWidget){
         m_layout->removeWidget(m_openglWidget);
         delete m_openglWidget;
+        m_openglWidget = nullptr;
     }
+    //根据名字创建对应的类
+    if(m_metaObjectMap.find(m_combox->currentText()) == m_metaObjectMap.end()){
+        QMessageBox::warning(this, "waring", QString("can not find widget : %1").arg(m_combox->currentText()));
+        return;
+    }
+    const QMetaObject * myMetaObject = m_metaObjectMap[m_combox->currentText()];
+    m_openglWidget = static_cast<QOpenGLWidget*>(myMetaObject->newInstance());
 
-    switch (index) {
-        case 0:
-            m_openglWidget = new HelloWindow;
-            break;
-        case 1:
-            m_openglWidget = new HelloTriangle;
-            break;
-        case 2:
-            m_openglWidget = new HelloTriangleIndexed;
-            break;
-        case 3:
-            m_openglWidget = new HelloTriangleExercise1;
-            break;
-        case 4:
-            m_openglWidget = new HelloTriangleExercise2;
-            break;
-        case 5:
-            m_openglWidget = new HelloTriangleExercise3;
-            break;
-        case 6:
-            m_openglWidget = new ShadersInterpolation;
-            break;
-        case 7:
-            m_openglWidget = new Textures;
-            break;
-        case 8:
-            m_openglWidget = new TexturesExercise2;
-            break;
-        case 9:
-            m_openglWidget = new TexturesExercise3;
-            break;
-        case 10:
-            m_openglWidget = new TexturesExercise4;
-            break;
-        case 11:
-            m_openglWidget = new Transformations;
-            break;
-        default:
-            break;
-    }
     m_layout->addWidget(m_openglWidget);
+}
+
+void MainWindow::registerMetaObject()
+{
+    m_metaObjectList << &HelloWindow::staticMetaObject;
+    m_metaObjectList << &HelloTriangle::staticMetaObject;
+    m_metaObjectList << &HelloTriangleIndexed::staticMetaObject;
+    m_metaObjectList << &HelloTriangleExercise1::staticMetaObject;
+    m_metaObjectList << &HelloTriangleExercise2::staticMetaObject;
+    m_metaObjectList << &HelloTriangleExercise3::staticMetaObject;
+    m_metaObjectList << &ShadersInterpolation::staticMetaObject;
+    m_metaObjectList << &Textures::staticMetaObject;
+    m_metaObjectList << &TexturesExercise2::staticMetaObject;
+    m_metaObjectList << &TexturesExercise3::staticMetaObject;
+    m_metaObjectList << &TexturesExercise4::staticMetaObject;
+    m_metaObjectList << &Transformations::staticMetaObject;
+    m_metaObjectList << &CoordinateSystems::staticMetaObject;
+    m_metaObjectList << &CoordinateSystemsDepth::staticMetaObject;
+    m_metaObjectList << &CoordinateSystemsExercise::staticMetaObject;
+    for(const QMetaObject* mo : m_metaObjectList){
+        m_metaObjectMap.insert(mo->className(), mo);
+        m_combox->addItem(mo->className());
+    }
 }
 

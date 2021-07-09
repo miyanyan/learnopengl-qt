@@ -1,9 +1,12 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QtCore>
 #include <QWidget>
 #include <QComboBox>
 #include <QGridLayout>
+#include <QMetaType>
+#include <QMap>
 #include <memory>
 
 #include "1.getting_started/1.1hello_window/HelloWindow.h"
@@ -18,6 +21,10 @@
 #include "1.getting_started/4.5textures_exercise3/TexturesExercise3.h"
 #include "1.getting_started/4.6textures_exercise4/TexturesExercise4.h"
 #include "1.getting_started/5.1transformations/Transformations.h"
+#include "1.getting_started/6.1coordinate_systems/CoordinateSystems.h"
+#include "1.getting_started/6.2coordinate_systems_depth/CoordinateSystemsDepth.h"
+#include "1.getting_started/6.3coordinate_systems_exercise/CoordinateSystemsExercise.h"
+
 
 
 class MainWindow : public QWidget
@@ -30,6 +37,7 @@ public:
 
 private:
     void showGLWindows(int index);
+    void registerMetaObject();
 
 private:
     QWidget* m_container;
@@ -37,5 +45,8 @@ private:
     QComboBox* m_combox;
 
     QOpenGLWidget* m_openglWidget;
+
+    QList<const QMetaObject*> m_metaObjectList;
+    QMap<QString, const QMetaObject*> m_metaObjectMap;
 };
 #endif // MAINWINDOW_H

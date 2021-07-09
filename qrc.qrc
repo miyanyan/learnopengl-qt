@@ -17,5 +17,9 @@
         <file>1.getting_started/4.6textures_exercise4/textures_exercise4.vert</file>
         <file>1.getting_started/5.1transformations/transformations.frag</file>
         <file>1.getting_started/5.1transformations/transformations.vert</file>
+        <file>1.getting_started/6.1coordinate_systems/CoordinateSystems.frag</file>
+        <file>1.getting_started/6.1coordinate_systems/CoordinateSystems.vert</file>
+        <file>1.getting_started/6.2coordinate_systems_depth/CoordinateSystemsDepth.frag</file>
+        <file>1.getting_started/6.2coordinate_systems_depth/CoordinateSystemsDepth.vert</file>
     </qresource>
 </RCC>

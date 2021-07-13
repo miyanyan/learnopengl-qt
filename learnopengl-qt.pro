@@ -34,6 +34,7 @@ SOURCES += \
     1.getting_started/7.1camera_circle/CameraCircle.cpp \
     1.getting_started/7.2camera_interact/CameraInteract.cpp \
     1.getting_started/7.4camera_class/CameraClass.cpp \
+    2.lighting/1.colors/Colors.cpp \
     main.cpp \
     MainWindow.cpp \
     utils/CameraUtil.cpp
@@ -57,6 +58,7 @@ HEADERS += \
     1.getting_started/7.1camera_circle/CameraCircle.h \
     1.getting_started/7.2camera_interact/CameraInteract.h \
     1.getting_started/7.4camera_class/CameraClass.h \
+    2.lighting/1.colors/Colors.h \
     MainWindow.h \
     utils/CameraUtil.h
 

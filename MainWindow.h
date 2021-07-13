@@ -27,6 +27,7 @@
 #include "1.getting_started/7.1camera_circle/CameraCircle.h"
 #include "1.getting_started/7.2camera_interact/CameraInteract.h"
 #include "1.getting_started/7.4camera_class/CameraClass.h"
+#include "2.lighting/1.colors/Colors.h"
 
 
 class MainWindow : public QMainWindow

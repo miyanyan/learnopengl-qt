@@ -68,6 +68,8 @@ void MainWindow::registerMetaObject()
     m_metaObjectList << &CameraCircle::staticMetaObject;
     m_metaObjectList << &CameraInteract::staticMetaObject;
     m_metaObjectList << &CameraClass::staticMetaObject;
+
+    m_metaObjectList << &Colors::staticMetaObject;
     //add QMetaObject to map and combox
     for(const QMetaObject* mo : m_metaObjectList){
         m_metaObjectMap.insert(mo->className(), mo);

@@ -4,20 +4,19 @@
 #include <QMessageBox>
 #include <QListView>
 
-MainWindow::MainWindow(QWidget *parent)
-    : QWidget(parent),
+MainWindow::MainWindow(QMainWindow *parent)
+    : QMainWindow(parent),
       m_openglWidget(nullptr),
       m_layout(nullptr),
       m_combox(new QComboBox(this))
 {
     registerMetaObject();
 
-    m_container = new QWidget(this);
-    m_layout = new QGridLayout(m_container);
+    m_container = new QWidget;
+    this->setCentralWidget(m_container);
 
-    QGridLayout* layout = new QGridLayout(this);
-    layout->addWidget(m_combox, 1, 1, 1, 1);
-    layout->addWidget(m_container, 2, 1, 10, 1);
+    m_layout = new QGridLayout(m_container);
+    m_layout->addWidget(m_combox, 1, 1, 1, 1);
 
     showGLWindows(0);
 
@@ -46,7 +45,7 @@ void MainWindow::showGLWindows(int index)
     const QMetaObject * myMetaObject = m_metaObjectMap[m_combox->currentText()];
     m_openglWidget = static_cast<QOpenGLWidget*>(myMetaObject->newInstance());
 
-    m_layout->addWidget(m_openglWidget);
+    m_layout->addWidget(m_openglWidget, 2, 1, 10, 1);
 }
 
 void MainWindow::registerMetaObject()
@@ -66,6 +65,10 @@ void MainWindow::registerMetaObject()
     m_metaObjectList << &CoordinateSystems::staticMetaObject;
     m_metaObjectList << &CoordinateSystemsDepth::staticMetaObject;
     m_metaObjectList << &CoordinateSystemsExercise::staticMetaObject;
+    m_metaObjectList << &CameraCircle::staticMetaObject;
+    m_metaObjectList << &CameraInteract::staticMetaObject;
+    m_metaObjectList << &CameraClass::staticMetaObject;
+    //add QMetaObject to map and combox
     for(const QMetaObject* mo : m_metaObjectList){
         m_metaObjectMap.insert(mo->className(), mo);
         m_combox->addItem(mo->className());

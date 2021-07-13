@@ -31,8 +31,12 @@ SOURCES += \
     1.getting_started/6.1coordinate_systems/CoordinateSystems.cpp \
     1.getting_started/6.2coordinate_systems_depth/CoordinateSystemsDepth.cpp \
     1.getting_started/6.3coordinate_systems_exercise/CoordinateSystemsExercise.cpp \
+    1.getting_started/7.1camera_circle/CameraCircle.cpp \
+    1.getting_started/7.2camera_interact/CameraInteract.cpp \
+    1.getting_started/7.4camera_class/CameraClass.cpp \
     main.cpp \
-    MainWindow.cpp
+    MainWindow.cpp \
+    utils/CameraUtil.cpp
 
 HEADERS += \
     1.getting_started/1.1hello_window/HelloWindow.h \
@@ -50,7 +54,11 @@ HEADERS += \
     1.getting_started/6.1coordinate_systems/CoordinateSystems.h \
     1.getting_started/6.2coordinate_systems_depth/CoordinateSystemsDepth.h \
     1.getting_started/6.3coordinate_systems_exercise/CoordinateSystemsExercise.h \
-    MainWindow.h
+    1.getting_started/7.1camera_circle/CameraCircle.h \
+    1.getting_started/7.2camera_interact/CameraInteract.h \
+    1.getting_started/7.4camera_class/CameraClass.h \
+    MainWindow.h \
+    utils/CameraUtil.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

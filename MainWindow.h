@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QtCore>
-#include <QWidget>
+#include <QMainWindow>
 #include <QComboBox>
 #include <QGridLayout>
 #include <QMetaType>
@@ -24,15 +24,17 @@
 #include "1.getting_started/6.1coordinate_systems/CoordinateSystems.h"
 #include "1.getting_started/6.2coordinate_systems_depth/CoordinateSystemsDepth.h"
 #include "1.getting_started/6.3coordinate_systems_exercise/CoordinateSystemsExercise.h"
+#include "1.getting_started/7.1camera_circle/CameraCircle.h"
+#include "1.getting_started/7.2camera_interact/CameraInteract.h"
+#include "1.getting_started/7.4camera_class/CameraClass.h"
 
 
-
-class MainWindow : public QWidget
+class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    MainWindow(QMainWindow *parent = nullptr);
     ~MainWindow();
 
 private:

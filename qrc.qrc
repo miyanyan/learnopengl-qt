@@ -25,5 +25,11 @@
         <file>2.lighting/1.colors/colors.vert</file>
         <file>2.lighting/1.colors/colors.frag</file>
         <file>2.lighting/1.colors/light_cube.frag</file>
+        <file>2.lighting/2.1basic_lighting_diffuse/basic_lighting.frag</file>
+        <file>2.lighting/2.1basic_lighting_diffuse/basic_lighting.vert</file>
+        <file>2.lighting/2.2basic_lighting_specular/basic_lighting.frag</file>
+        <file>2.lighting/2.2basic_lighting_specular/basic_lighting.vert</file>
+        <file>2.lighting/2.5basic_lighting_exercise3/basic_lighting.frag</file>
+        <file>2.lighting/2.5basic_lighting_exercise3/basic_lighting.vert</file>
     </qresource>
 </RCC>

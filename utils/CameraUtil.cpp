@@ -12,13 +12,17 @@ CameraUtil::CameraUtil(QWidget *widget)
       m_lastFrame(0.0),
       m_deltaTime(0.0),
       m_cameraPos(0.0, 0.0, 3.0),
-      m_cameraUp(0.0, 1.0, 0.0)
+      m_cameraUp(0.0, 1.0, 0.0),
+      m_timerId(0),
+      m_isMouseMoveDisabled(false)
 {
     calculateCameraDirection();
     m_keyMap[FORWARD]   = Qt::Key_W;
     m_keyMap[BACKWARD]  = Qt::Key_S;
     m_keyMap[LEFT]      = Qt::Key_A;
     m_keyMap[RIGHT]     = Qt::Key_D;
+    m_keyMap[DISABLE]   = Qt::Key_Q;
+    m_keyMap[ENABLE]    = Qt::Key_E;
 }
 
 void CameraUtil::init()
@@ -196,6 +200,8 @@ void CameraUtil::handleMouseMoveEvent(QMouseEvent *event)
     offsetY *= m_sensitivity;
     //更新lastpos
     m_lastMousePos = event->pos();
+    //如果禁用鼠标移动
+    if(m_isMouseMoveDisabled) return;
     //更新欧拉角
     m_yaw += offsetX;
     m_pitch += offsetY;
@@ -246,6 +252,16 @@ void CameraUtil::handleTimerEvent(QTimerEvent *event)
         auto cameraRight = QVector3D::crossProduct(m_cameraDirection, m_cameraUp);
         cameraRight.normalize();
         m_cameraPos += speed * cameraRight;
+    }
+    //禁用鼠标监控
+    if(m_pressedKeys.contains(m_keyMap[DISABLE])){
+        m_isMouseMoveDisabled = true;
+        m_widget->setCursor(Qt::ArrowCursor);
+    }
+    //启用鼠标监控
+    if(m_pressedKeys.contains(m_keyMap[ENABLE])){
+        m_isMouseMoveDisabled = false;
+        m_widget->setCursor(Qt::BlankCursor);//鼠标不可见
     }
 
     m_widget->update();

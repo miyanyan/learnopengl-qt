@@ -70,6 +70,11 @@ void MainWindow::registerMetaObject()
     m_metaObjectList << &CameraClass::staticMetaObject;
 
     m_metaObjectList << &Colors::staticMetaObject;
+    m_metaObjectList << &BasicLightingDiffuse::staticMetaObject;
+    m_metaObjectList << &BasicLightingSpecular::staticMetaObject;
+    m_metaObjectList << &BasicLightingExercise1::staticMetaObject;
+    m_metaObjectList << &BasicLightingExercise3::staticMetaObject;
+
     //add QMetaObject to map and combox
     for(const QMetaObject* mo : m_metaObjectList){
         m_metaObjectMap.insert(mo->className(), mo);

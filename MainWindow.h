@@ -28,6 +28,10 @@
 #include "1.getting_started/7.2camera_interact/CameraInteract.h"
 #include "1.getting_started/7.4camera_class/CameraClass.h"
 #include "2.lighting/1.colors/Colors.h"
+#include "2.lighting/2.1basic_lighting_diffuse/BasicLightingDiffuse.h"
+#include "2.lighting/2.2basic_lighting_specular/BasicLightingSpecular.h"
+#include "2.lighting/2.3basic_lighting_exercise1/BasicLightingExercise1.h"
+#include "2.lighting/2.5basic_lighting_exercise3/BasicLightingExercise3.h"
 
 
 class MainWindow : public QMainWindow

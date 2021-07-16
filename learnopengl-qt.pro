@@ -35,6 +35,10 @@ SOURCES += \
     1.getting_started/7.2camera_interact/CameraInteract.cpp \
     1.getting_started/7.4camera_class/CameraClass.cpp \
     2.lighting/1.colors/Colors.cpp \
+    2.lighting/2.1basic_lighting_diffuse/BasicLightingDiffuse.cpp \
+    2.lighting/2.2basic_lighting_specular/BasicLightingSpecular.cpp \
+    2.lighting/2.3basic_lighting_exercise1/BasicLightingExercise1.cpp \
+    2.lighting/2.5basic_lighting_exercise3/BasicLightingExercise3.cpp \
     main.cpp \
     MainWindow.cpp \
     utils/CameraUtil.cpp
@@ -59,6 +63,10 @@ HEADERS += \
     1.getting_started/7.2camera_interact/CameraInteract.h \
     1.getting_started/7.4camera_class/CameraClass.h \
     2.lighting/1.colors/Colors.h \
+    2.lighting/2.1basic_lighting_diffuse/BasicLightingDiffuse.h \
+    2.lighting/2.2basic_lighting_specular/BasicLightingSpecular.h \
+    2.lighting/2.3basic_lighting_exercise1/BasicLightingExercise1.h \
+    2.lighting/2.5basic_lighting_exercise3/BasicLightingExercise3.h \
     MainWindow.h \
     utils/CameraUtil.h
 

@@ -19,7 +19,9 @@ public:
         FORWARD,
         BACKWARD,
         LEFT,
-        RIGHT
+        RIGHT,
+        DISABLE,
+        ENABLE
     };
     CameraUtil(QWidget* widget);
     //初始化
@@ -83,6 +85,8 @@ private:
     float m_moveSpeed;
 
     QPoint m_lastMousePos;
+
+    bool m_isMouseMoveDisabled;
 };
 
 #endif // CAMERAUTIL_H

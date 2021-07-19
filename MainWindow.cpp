@@ -74,6 +74,11 @@ void MainWindow::registerMetaObject()
     m_metaObjectList << &BasicLightingSpecular::staticMetaObject;
     m_metaObjectList << &BasicLightingExercise1::staticMetaObject;
     m_metaObjectList << &BasicLightingExercise3::staticMetaObject;
+    m_metaObjectList << &Materials::staticMetaObject;
+    m_metaObjectList << &LightingMapsDiffuseMap::staticMetaObject;
+    m_metaObjectList << &LightingMapsSpecularMap::staticMetaObject;
+    m_metaObjectList << &LightingMapsExercise2::staticMetaObject;
+    m_metaObjectList << &LightingMapsExercise4::staticMetaObject;
 
     //add QMetaObject to map and combox
     for(const QMetaObject* mo : m_metaObjectList){

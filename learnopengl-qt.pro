@@ -39,6 +39,11 @@ SOURCES += \
     2.lighting/2.2basic_lighting_specular/BasicLightingSpecular.cpp \
     2.lighting/2.3basic_lighting_exercise1/BasicLightingExercise1.cpp \
     2.lighting/2.5basic_lighting_exercise3/BasicLightingExercise3.cpp \
+    2.lighting/3.1materials/Materials.cpp \
+    2.lighting/4.1lighting_maps_diffuse_map/LightingMapsDiffuseMap.cpp \
+    2.lighting/4.2lighting_maps_specular_map/LightingMapsSpecularMap.cpp \
+    2.lighting/4.3lighting_maps_exercise2/LightingMapsExercise2.cpp \
+    2.lighting/4.4lighting_maps_exercise4/LightingMapsExercise4.cpp \
     main.cpp \
     MainWindow.cpp \
     utils/CameraUtil.cpp
@@ -67,6 +72,11 @@ HEADERS += \
     2.lighting/2.2basic_lighting_specular/BasicLightingSpecular.h \
     2.lighting/2.3basic_lighting_exercise1/BasicLightingExercise1.h \
     2.lighting/2.5basic_lighting_exercise3/BasicLightingExercise3.h \
+    2.lighting/3.1materials/Materials.h \
+    2.lighting/4.1lighting_maps_diffuse_map/LightingMapsDiffuseMap.h \
+    2.lighting/4.2lighting_maps_specular_map/LightingMapsSpecularMap.h \
+    2.lighting/4.3lighting_maps_exercise2/LightingMapsExercise2.h \
+    2.lighting/4.4lighting_maps_exercise4/LightingMapsExercise4.h \
     MainWindow.h \
     utils/CameraUtil.h
 

@@ -32,6 +32,11 @@
 #include "2.lighting/2.2basic_lighting_specular/BasicLightingSpecular.h"
 #include "2.lighting/2.3basic_lighting_exercise1/BasicLightingExercise1.h"
 #include "2.lighting/2.5basic_lighting_exercise3/BasicLightingExercise3.h"
+#include "2.lighting/3.1materials/Materials.h"
+#include "2.lighting/4.1lighting_maps_diffuse_map/LightingMapsDiffuseMap.h"
+#include "2.lighting/4.2lighting_maps_specular_map/LightingMapsSpecularMap.h"
+#include "2.lighting/4.3lighting_maps_exercise2/LightingMapsExercise2.h"
+#include "2.lighting/4.4lighting_maps_exercise4/LightingMapsExercise4.h"
 
 
 class MainWindow : public QMainWindow

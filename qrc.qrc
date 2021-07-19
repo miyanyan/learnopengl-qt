@@ -44,5 +44,11 @@
         <file>2.lighting/4.4lighting_maps_exercise4/matrix.jpg</file>
         <file>2.lighting/4.3lighting_maps_exercise2/lighting_maps_exercise2.frag</file>
         <file>2.lighting/4.3lighting_maps_exercise2/lighting_maps_exercise2.vert</file>
+        <file>2.lighting/5.1light_casters_directional/light_casters_directional.frag</file>
+        <file>2.lighting/5.1light_casters_directional/light_casters_directional.vert</file>
+        <file>2.lighting/5.2light_casters_point/light_casters_point.frag</file>
+        <file>2.lighting/5.2light_casters_point/light_casters_point.vert</file>
+        <file>2.lighting/5.3light_casters_spot/light_casters_spot.frag</file>
+        <file>2.lighting/5.3light_casters_spot/light_casters_spot.vert</file>
     </qresource>
 </RCC>

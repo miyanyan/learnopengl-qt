@@ -9,7 +9,7 @@ LightingMapsSpecularMap::LightingMapsSpecularMap(QWidget *parent)
       m_lightPos(0.6, 0.0, 5.0),
       m_camera(this)
 {
-    m_checkbox = new QCheckBox("", this);
+
 }
 
 LightingMapsSpecularMap::~LightingMapsSpecularMap()

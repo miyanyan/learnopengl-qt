@@ -1,19 +1,42 @@
-#include "LightingMapsExercise4.h"
+#include "LightCastersPoint.h"
 
 #include <QDebug>
 #include <QTime>
 
-LightingMapsExercise4::LightingMapsExercise4(QWidget *parent)
+LightCastersPoint::LightCastersPoint(QWidget *parent)
     : QOpenGLWidget(parent),
       m_VBO(QOpenGLBuffer::VertexBuffer),
       m_lightPos(1.2, 1.0, 2.0),
       m_camera(this)
 {
+    QStringList text;
+    text << "light constant" << "light linear" << "light quadratic";
+    for(int i = 0; i < text.size(); ++i){
+        QLabel* label = new QLabel(text[i], this);
+        label->setStyleSheet("QLabel { color : white; }");
+        label->setGeometry(10, 20 * i, 120, 20);
+    }
+    m_sliderLightConstant = new QSlider(Qt::Horizontal, this);
+    m_sliderLightLinear = new QSlider(Qt::Horizontal, this);
+    m_sliderLightQuadratic = new QSlider(Qt::Horizontal, this);
+
+    m_sliderLightConstant->setGeometry(140, 0, 80, 20);
+    m_sliderLightLinear->setGeometry(140, 20, 80, 20);
+    m_sliderLightQuadratic->setGeometry(140, 40, 80, 20);
+
+    m_sliderLightConstant->setMaximum(1000);
+    m_sliderLightLinear->setMaximum(1000);
+    m_sliderLightQuadratic->setMaximum(1000);
+
+    m_sliderLightConstant->setMinimum(1);
+    m_sliderLightLinear->setMinimum(1);
+    m_sliderLightQuadratic->setMinimum(1);
+
     m_timer.start(10);
-    connect(&m_timer, &QTimer::timeout, this, &LightingMapsExercise4::handleTimeout);
+    connect(&m_timer, &QTimer::timeout, this, &LightCastersPoint::handleTimeout);
 }
 
-LightingMapsExercise4::~LightingMapsExercise4()
+LightCastersPoint::~LightCastersPoint()
 {
     makeCurrent();
 
@@ -27,7 +50,7 @@ LightingMapsExercise4::~LightingMapsExercise4()
     doneCurrent();
 }
 
-void LightingMapsExercise4::initializeGL()
+void LightCastersPoint::initializeGL()
 {
     if(!context()){
         qCritical() << "Cant't get OpenGL contex";
@@ -41,11 +64,11 @@ void LightingMapsExercise4::initializeGL()
     //shader初始化
     {
         bool result = true;
-        result = m_lightShader.addShaderFromSourceFile(QOpenGLShader::Vertex, ":/2.lighting/4.4lighting_maps_exercise4/lighting_maps_exercise4.vert");
+        result = m_lightShader.addShaderFromSourceFile(QOpenGLShader::Vertex, ":/2.lighting/5.2light_casters_point/light_casters_point.vert");
         if(!result){
             qDebug() << m_lightShader.log();
         }
-        result = m_lightShader.addShaderFromSourceFile(QOpenGLShader::Fragment, ":/2.lighting/4.4lighting_maps_exercise4/lighting_maps_exercise4.frag");
+        result = m_lightShader.addShaderFromSourceFile(QOpenGLShader::Fragment, ":/2.lighting/5.2light_casters_point/light_casters_point.frag");
         if(!result){
             qDebug() << m_lightShader.log();
         }
@@ -114,6 +137,19 @@ void LightingMapsExercise4::initializeGL()
             -0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,  0.0f, 0.0f,
             -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,  0.0f, 1.0f
         };
+        //cube positions
+        m_cubePositions = {
+            {0.0, 0.0, 0.0},
+            {2.0, 5.0, -15.0},
+            {-1.5, -2.2, -2.5},
+            {-3.8, -2.0, -12.3},
+            {2.4, -0.4, -3.5},
+            {-1.7, 3.0, -7.5},
+            {1.3, -2.0, -2.5},
+            {1.5, 2.0, -2.5},
+            {1.5, 0.2, -1.5},
+            {-1.3, 1.0, -1.5}
+        };
 
         // light
         //1. 绑定顶点数组对象
@@ -178,18 +214,22 @@ void LightingMapsExercise4::initializeGL()
     }
     //MVP
     {
+        m_models.resize(m_cubePositions.size());
+        for(int i = 0; i < m_cubePositions.size(); ++i){
+            m_models[i].translate(m_cubePositions[i]);
+        }
         m_projection.perspective(45.0, 1.0 * width() / height(), 0.1, 100.0);
     }
     //相机类初始化
     m_camera.init();
 }
 
-void LightingMapsExercise4::resizeGL(int w, int h)
+void LightCastersPoint::resizeGL(int w, int h)
 {
     glViewport(0, 0, w, h);
 }
 
-void LightingMapsExercise4::paintGL()
+void LightCastersPoint::paintGL()
 {    
     glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -218,12 +258,19 @@ void LightingMapsExercise4::paintGL()
     m_lightShader.setUniformValue("light.ambient", QVector3D(0.2, 0.2, 0.2));
     m_lightShader.setUniformValue("light.diffuse", QVector3D(0.5, 0.5, 0.5));
     m_lightShader.setUniformValue("light.specular", QVector3D(1.0, 1.0, 1.0));
+    m_lightShader.setUniformValue("light.constant", GLfloat(m_sliderLightConstant->value()));
+    m_lightShader.setUniformValue("light.linear", GLfloat(m_sliderLightLinear->value() / 1000.0));
+    m_lightShader.setUniformValue("light.quadratic", GLfloat(m_sliderLightQuadratic->value() / 1000.0));
     //emission
     m_lightShader.setUniformValue("matrixMove", GLfloat(m_matrixMove));
     m_lightShader.setUniformValue("matrixLight", GLfloat(m_matrixLight));
 
     QOpenGLVertexArrayObject::Binder vaoBinder(&m_lightVAO);
-    glDrawArrays(GL_TRIANGLES, 0, 6 * 6);
+    for(int i = 0; i < m_cubePositions.size(); ++i){
+        //m_models[i].rotate(1.0 , {0.5, 1.0, 0.0});
+        m_lightShader.setUniformValue("model", m_models[i]);
+        glDrawArrays(GL_TRIANGLES, 0, 6 * 6);
+    }
 
     m_textureDiffuse->release();
     m_textureSpecular->release();
@@ -246,13 +293,13 @@ void LightingMapsExercise4::paintGL()
     m_lightCubeShader.release();
 }
 
-bool LightingMapsExercise4::event(QEvent *e)
+bool LightCastersPoint::event(QEvent *e)
 {
     m_camera.handle(e);
     return QWidget::event(e);
 }
 
-void LightingMapsExercise4::handleTimeout()
+void LightCastersPoint::handleTimeout()
 {
     float cur = QTime::currentTime().msecsSinceStartOfDay() / 1000.0;
     m_matrixMove = cur;

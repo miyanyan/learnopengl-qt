@@ -37,6 +37,9 @@
 #include "2.lighting/4.2lighting_maps_specular_map/LightingMapsSpecularMap.h"
 #include "2.lighting/4.3lighting_maps_exercise2/LightingMapsExercise2.h"
 #include "2.lighting/4.4lighting_maps_exercise4/LightingMapsExercise4.h"
+#include "2.lighting/5.1light_casters_directional/LightCastersDirectional.h"
+#include "2.lighting/5.2light_casters_point/LightCastersPoint.h"
+#include "2.lighting/5.3light_casters_spot/LightCastersSpot.h"
 
 
 class MainWindow : public QMainWindow

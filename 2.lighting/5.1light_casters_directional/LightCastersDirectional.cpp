@@ -1,19 +1,19 @@
-#include "LightingMapsExercise4.h"
+#include "LightCastersDirectional.h"
 
 #include <QDebug>
 #include <QTime>
 
-LightingMapsExercise4::LightingMapsExercise4(QWidget *parent)
+LightCastersDirectional::LightCastersDirectional(QWidget *parent)
     : QOpenGLWidget(parent),
       m_VBO(QOpenGLBuffer::VertexBuffer),
       m_lightPos(1.2, 1.0, 2.0),
       m_camera(this)
 {
     m_timer.start(10);
-    connect(&m_timer, &QTimer::timeout, this, &LightingMapsExercise4::handleTimeout);
+    connect(&m_timer, &QTimer::timeout, this, &LightCastersDirectional::handleTimeout);
 }
 
-LightingMapsExercise4::~LightingMapsExercise4()
+LightCastersDirectional::~LightCastersDirectional()
 {
     makeCurrent();
 
@@ -27,7 +27,7 @@ LightingMapsExercise4::~LightingMapsExercise4()
     doneCurrent();
 }
 
-void LightingMapsExercise4::initializeGL()
+void LightCastersDirectional::initializeGL()
 {
     if(!context()){
         qCritical() << "Cant't get OpenGL contex";
@@ -114,6 +114,19 @@ void LightingMapsExercise4::initializeGL()
             -0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,  0.0f, 0.0f,
             -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,  0.0f, 1.0f
         };
+        //cube positions
+        m_cubePositions = {
+            {0.0, 0.0, 0.0},
+            {2.0, 5.0, -15.0},
+            {-1.5, -2.2, -2.5},
+            {-3.8, -2.0, -12.3},
+            {2.4, -0.4, -3.5},
+            {-1.7, 3.0, -7.5},
+            {1.3, -2.0, -2.5},
+            {1.5, 2.0, -2.5},
+            {1.5, 0.2, -1.5},
+            {-1.3, 1.0, -1.5}
+        };
 
         // light
         //1. 绑定顶点数组对象
@@ -178,18 +191,22 @@ void LightingMapsExercise4::initializeGL()
     }
     //MVP
     {
+        m_models.resize(m_cubePositions.size());
+        for(int i = 0; i < m_cubePositions.size(); ++i){
+            m_models[i].translate(m_cubePositions[i]);
+        }
         m_projection.perspective(45.0, 1.0 * width() / height(), 0.1, 100.0);
     }
     //相机类初始化
     m_camera.init();
 }
 
-void LightingMapsExercise4::resizeGL(int w, int h)
+void LightCastersDirectional::resizeGL(int w, int h)
 {
     glViewport(0, 0, w, h);
 }
 
-void LightingMapsExercise4::paintGL()
+void LightCastersDirectional::paintGL()
 {    
     glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -214,7 +231,7 @@ void LightingMapsExercise4::paintGL()
     //material
     m_lightShader.setUniformValue("material.shininess", GLfloat(64.0));
     //light
-    m_lightShader.setUniformValue("light.position", m_lightPos);
+    m_lightShader.setUniformValue("light.direction", QVector3D(-0.2, -1.0, -0.3));
     m_lightShader.setUniformValue("light.ambient", QVector3D(0.2, 0.2, 0.2));
     m_lightShader.setUniformValue("light.diffuse", QVector3D(0.5, 0.5, 0.5));
     m_lightShader.setUniformValue("light.specular", QVector3D(1.0, 1.0, 1.0));
@@ -223,7 +240,11 @@ void LightingMapsExercise4::paintGL()
     m_lightShader.setUniformValue("matrixLight", GLfloat(m_matrixLight));
 
     QOpenGLVertexArrayObject::Binder vaoBinder(&m_lightVAO);
-    glDrawArrays(GL_TRIANGLES, 0, 6 * 6);
+    for(int i = 0; i < m_cubePositions.size(); ++i){
+        //m_models[i].rotate(1.0 , {0.5, 1.0, 0.0});
+        m_lightShader.setUniformValue("model", m_models[i]);
+        glDrawArrays(GL_TRIANGLES, 0, 6 * 6);
+    }
 
     m_textureDiffuse->release();
     m_textureSpecular->release();
@@ -246,13 +267,13 @@ void LightingMapsExercise4::paintGL()
     m_lightCubeShader.release();
 }
 
-bool LightingMapsExercise4::event(QEvent *e)
+bool LightCastersDirectional::event(QEvent *e)
 {
     m_camera.handle(e);
     return QWidget::event(e);
 }
 
-void LightingMapsExercise4::handleTimeout()
+void LightCastersDirectional::handleTimeout()
 {
     float cur = QTime::currentTime().msecsSinceStartOfDay() / 1000.0;
     m_matrixMove = cur;

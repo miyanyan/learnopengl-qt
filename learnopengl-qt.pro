@@ -44,6 +44,9 @@ SOURCES += \
     2.lighting/4.2lighting_maps_specular_map/LightingMapsSpecularMap.cpp \
     2.lighting/4.3lighting_maps_exercise2/LightingMapsExercise2.cpp \
     2.lighting/4.4lighting_maps_exercise4/LightingMapsExercise4.cpp \
+    2.lighting/5.1light_casters_directional/LightCastersDirectional.cpp \
+    2.lighting/5.2light_casters_point/LightCastersPoint.cpp \
+    2.lighting/5.3light_casters_spot/LightCastersSpot.cpp \
     main.cpp \
     MainWindow.cpp \
     utils/CameraUtil.cpp
@@ -77,6 +80,9 @@ HEADERS += \
     2.lighting/4.2lighting_maps_specular_map/LightingMapsSpecularMap.h \
     2.lighting/4.3lighting_maps_exercise2/LightingMapsExercise2.h \
     2.lighting/4.4lighting_maps_exercise4/LightingMapsExercise4.h \
+    2.lighting/5.1light_casters_directional/LightCastersDirectional.h \
+    2.lighting/5.2light_casters_point/LightCastersPoint.h \
+    2.lighting/5.3light_casters_spot/LightCastersSpot.h \
     MainWindow.h \
     utils/CameraUtil.h
 

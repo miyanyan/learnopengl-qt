@@ -50,6 +50,7 @@ void MainWindow::showGLWindows(int index)
 
 void MainWindow::registerMetaObject()
 {
+    //1.getting_started
     m_metaObjectList << &HelloWindow::staticMetaObject;
     m_metaObjectList << &HelloTriangle::staticMetaObject;
     m_metaObjectList << &HelloTriangleIndexed::staticMetaObject;
@@ -68,7 +69,7 @@ void MainWindow::registerMetaObject()
     m_metaObjectList << &CameraCircle::staticMetaObject;
     m_metaObjectList << &CameraInteract::staticMetaObject;
     m_metaObjectList << &CameraClass::staticMetaObject;
-
+    //2.lighting
     m_metaObjectList << &Colors::staticMetaObject;
     m_metaObjectList << &BasicLightingDiffuse::staticMetaObject;
     m_metaObjectList << &BasicLightingSpecular::staticMetaObject;
@@ -79,6 +80,9 @@ void MainWindow::registerMetaObject()
     m_metaObjectList << &LightingMapsSpecularMap::staticMetaObject;
     m_metaObjectList << &LightingMapsExercise2::staticMetaObject;
     m_metaObjectList << &LightingMapsExercise4::staticMetaObject;
+    m_metaObjectList << &LightCastersDirectional::staticMetaObject;
+    m_metaObjectList << &LightCastersPoint::staticMetaObject;
+    m_metaObjectList << &LightCastersSpot::staticMetaObject;
 
     //add QMetaObject to map and combox
     for(const QMetaObject* mo : m_metaObjectList){

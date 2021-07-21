@@ -83,6 +83,7 @@ void MainWindow::registerMetaObject()
     m_metaObjectList << &LightCastersDirectional::staticMetaObject;
     m_metaObjectList << &LightCastersPoint::staticMetaObject;
     m_metaObjectList << &LightCastersSpot::staticMetaObject;
+    m_metaObjectList << &MultipleLights::staticMetaObject;
 
     //add QMetaObject to map and combox
     for(const QMetaObject* mo : m_metaObjectList){

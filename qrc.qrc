@@ -50,5 +50,9 @@
         <file>2.lighting/5.2light_casters_point/light_casters_point.vert</file>
         <file>2.lighting/5.3light_casters_spot/light_casters_spot.frag</file>
         <file>2.lighting/5.3light_casters_spot/light_casters_spot.vert</file>
+        <file>2.lighting/6.1multiple_lights/multiple_lights.frag</file>
+        <file>2.lighting/6.1multiple_lights/multiple_lights.vert</file>
+        <file>2.lighting/6.1multiple_lights/light_cube.frag</file>
+        <file>2.lighting/6.1multiple_lights/light_cube.vert</file>
     </qresource>
 </RCC>

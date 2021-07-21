@@ -47,6 +47,7 @@ SOURCES += \
     2.lighting/5.1light_casters_directional/LightCastersDirectional.cpp \
     2.lighting/5.2light_casters_point/LightCastersPoint.cpp \
     2.lighting/5.3light_casters_spot/LightCastersSpot.cpp \
+    2.lighting/6.1multiple_lights/MultipleLights.cpp \
     main.cpp \
     MainWindow.cpp \
     utils/CameraUtil.cpp
@@ -83,6 +84,7 @@ HEADERS += \
     2.lighting/5.1light_casters_directional/LightCastersDirectional.h \
     2.lighting/5.2light_casters_point/LightCastersPoint.h \
     2.lighting/5.3light_casters_spot/LightCastersSpot.h \
+    2.lighting/6.1multiple_lights/MultipleLights.h \
     MainWindow.h \
     utils/CameraUtil.h
 

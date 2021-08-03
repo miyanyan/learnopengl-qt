@@ -140,7 +140,7 @@ void LightingMapsDiffuseMap::initializeGL()
     }
     //texture
     {
-        m_texture = std::make_unique<QOpenGLTexture>(QImage(":/2.lighting/4.1lighting_maps_diffuse_map/container2.png").mirrored());
+        m_texture = std::make_unique<QOpenGLTexture>(QImage(":/resources/textures/container2.png").mirrored());
         m_texture->create();
         //纹理环绕方式
         m_texture->setWrapMode(QOpenGLTexture::DirectionS, QOpenGLTexture::Repeat);

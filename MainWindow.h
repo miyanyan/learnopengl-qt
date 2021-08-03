@@ -41,6 +41,7 @@
 #include "2.lighting/5.2light_casters_point/LightCastersPoint.h"
 #include "2.lighting/5.3light_casters_spot/LightCastersSpot.h"
 #include "2.lighting/6.1multiple_lights/MultipleLights.h"
+#include "3.model_loading/1.model_loading/ModelLoading.h"
 
 
 class MainWindow : public QMainWindow
@@ -52,7 +53,7 @@ public:
     ~MainWindow();
 
 private:
-    void showGLWindows(int index);
+    void showGLWindows();
     void registerMetaObject();
 
 private:

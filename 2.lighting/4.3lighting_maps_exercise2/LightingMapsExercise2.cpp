@@ -141,7 +141,7 @@ void LightingMapsExercise2::initializeGL()
     }
     //texture
     {
-        m_textureDiffuse = std::make_unique<QOpenGLTexture>(QImage(":/2.lighting/4.1lighting_maps_diffuse_map/container2.png").mirrored());
+        m_textureDiffuse = std::make_unique<QOpenGLTexture>(QImage(":/resources/textures/container2.png").mirrored());
         m_textureDiffuse->create();
         //纹理环绕方式
         m_textureDiffuse->setWrapMode(QOpenGLTexture::DirectionS, QOpenGLTexture::Repeat);
@@ -152,7 +152,7 @@ void LightingMapsExercise2::initializeGL()
         m_textureDiffuse->generateMipMaps();
         m_textureDiffuse->setMinMagFilters(QOpenGLTexture::LinearMipMapLinear, QOpenGLTexture::Linear);
 
-        m_textureSpecular = std::make_unique<QOpenGLTexture>(QImage(":/2.lighting/4.2lighting_maps_specular_map/container2_specular.png").mirrored());
+        m_textureSpecular = std::make_unique<QOpenGLTexture>(QImage(":/resources/textures/container2_specular.png").mirrored());
         m_textureSpecular->create();
         //纹理环绕方式
         m_textureSpecular->setWrapMode(QOpenGLTexture::DirectionS, QOpenGLTexture::Repeat);

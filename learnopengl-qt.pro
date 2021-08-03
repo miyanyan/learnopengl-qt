@@ -9,6 +9,7 @@ CONFIG += c++11
 # depend on your compiler). Please consult the documentation of the
 # deprecated API in order to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS
+DEFINES += SRC_PATH=$$PWD
 
 # You can also make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -48,9 +49,12 @@ SOURCES += \
     2.lighting/5.2light_casters_point/LightCastersPoint.cpp \
     2.lighting/5.3light_casters_spot/LightCastersSpot.cpp \
     2.lighting/6.1multiple_lights/MultipleLights.cpp \
+    3.model_loading/1.model_loading/ModelLoading.cpp \
     main.cpp \
     MainWindow.cpp \
-    utils/CameraUtil.cpp
+    utils/CameraUtil.cpp \
+    utils/Mesh.cpp \
+    utils/ModelUtil.cpp
 
 HEADERS += \
     1.getting_started/1.1hello_window/HelloWindow.h \
@@ -85,8 +89,12 @@ HEADERS += \
     2.lighting/5.2light_casters_point/LightCastersPoint.h \
     2.lighting/5.3light_casters_spot/LightCastersSpot.h \
     2.lighting/6.1multiple_lights/MultipleLights.h \
+    3.model_loading/1.model_loading/ModelLoading.h \
+    Config.h \
     MainWindow.h \
-    utils/CameraUtil.h
+    utils/CameraUtil.h \
+    utils/Mesh.h \
+    utils/ModelUtil.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -95,4 +103,11 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     qrc.qrc
+
+INCLUDEPATH += $$PWD/thirdparty/assimp_x64-windows/include
+DEPENDPATH += $$PWD/thirdparty/assimp_x64-windows
+
+LIBS += -L$$PWD/thirdparty/assimp_x64-windows/lib/ -lassimp-vc141-mt
+
+
 

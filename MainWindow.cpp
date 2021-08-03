@@ -18,7 +18,7 @@ MainWindow::MainWindow(QMainWindow *parent)
     m_layout = new QGridLayout(m_container);
     m_layout->addWidget(m_combox, 1, 1, 1, 1);
 
-    showGLWindows(0);
+    showGLWindows();
 
     QListView *view = new QListView(m_combox);
     view->setStyleSheet("QListView::item{height: 30px}");
@@ -30,7 +30,7 @@ MainWindow::~MainWindow()
 {
 }
 
-void MainWindow::showGLWindows(int index)
+void MainWindow::showGLWindows()
 {
     if(m_openglWidget){
         m_layout->removeWidget(m_openglWidget);
@@ -84,6 +84,8 @@ void MainWindow::registerMetaObject()
     m_metaObjectList << &LightCastersPoint::staticMetaObject;
     m_metaObjectList << &LightCastersSpot::staticMetaObject;
     m_metaObjectList << &MultipleLights::staticMetaObject;
+    //3.model_loading
+    m_metaObjectList << &ModelLoading::staticMetaObject;
 
     //add QMetaObject to map and combox
     for(const QMetaObject* mo : m_metaObjectList){

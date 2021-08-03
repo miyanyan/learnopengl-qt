@@ -134,8 +134,8 @@ void CoordinateSystemsDepth::initializeGL()
         m_program.enableAttributeArray(1);
     }
     //texture
-    m_texture[0] = std::make_unique<QOpenGLTexture>(QImage(":/1.getting_started/4.1textures/awesomeface.png").mirrored());
-    m_texture[1] = std::make_unique<QOpenGLTexture>(QImage(":/1.getting_started/4.1textures/container.jpg").mirrored());
+    m_texture[0] = std::make_unique<QOpenGLTexture>(QImage(":/resources/textures/awesomeface.png").mirrored());
+    m_texture[1] = std::make_unique<QOpenGLTexture>(QImage(":/resources/textures/container.jpg").mirrored());
     for(int i = 0; i < 2; ++i){
         m_texture[i]->create();
         //纹理环绕方式

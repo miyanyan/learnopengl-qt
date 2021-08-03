@@ -50,6 +50,7 @@ SOURCES += \
     2.lighting/5.3light_casters_spot/LightCastersSpot.cpp \
     2.lighting/6.1multiple_lights/MultipleLights.cpp \
     3.model_loading/1.model_loading/ModelLoading.cpp \
+    4.advanced_opengl/1.1depth_testing/DepthTesting.cpp \
     main.cpp \
     MainWindow.cpp \
     utils/CameraUtil.cpp \
@@ -90,6 +91,7 @@ HEADERS += \
     2.lighting/5.3light_casters_spot/LightCastersSpot.h \
     2.lighting/6.1multiple_lights/MultipleLights.h \
     3.model_loading/1.model_loading/ModelLoading.h \
+    4.advanced_opengl/1.1depth_testing/DepthTesting.h \
     Config.h \
     MainWindow.h \
     utils/CameraUtil.h \

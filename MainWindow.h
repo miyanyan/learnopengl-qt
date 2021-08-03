@@ -42,6 +42,7 @@
 #include "2.lighting/5.3light_casters_spot/LightCastersSpot.h"
 #include "2.lighting/6.1multiple_lights/MultipleLights.h"
 #include "3.model_loading/1.model_loading/ModelLoading.h"
+#include "4.advanced_opengl/1.1depth_testing/DepthTesting.h"
 
 
 class MainWindow : public QMainWindow

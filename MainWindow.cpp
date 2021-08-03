@@ -86,6 +86,8 @@ void MainWindow::registerMetaObject()
     m_metaObjectList << &MultipleLights::staticMetaObject;
     //3.model_loading
     m_metaObjectList << &ModelLoading::staticMetaObject;
+    //4.advanced_opengl
+    m_metaObjectList << &DepthTesting::staticMetaObject;
 
     //add QMetaObject to map and combox
     for(const QMetaObject* mo : m_metaObjectList){

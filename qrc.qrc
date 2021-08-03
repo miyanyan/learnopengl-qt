@@ -54,8 +54,11 @@
         <file>2.lighting/6.1multiple_lights/multiple_lights.vert</file>
         <file>2.lighting/6.1multiple_lights/light_cube.frag</file>
         <file>2.lighting/6.1multiple_lights/light_cube.vert</file>
-        <file>3.model_loading/1.model_loading/model_loading.frag</file>
-        <file>3.model_loading/1.model_loading/model_loading.vert</file>
         <file>resources/objects/nanosuit/nanosuit.obj</file>
+        <file>4.advanced_opengl/1.1depth_testing/depth_testing.frag</file>
+        <file>4.advanced_opengl/1.1depth_testing/depth_testing.vert</file>
+        <file>4.advanced_opengl/1.1depth_testing/depth_testing_view.frag</file>
+        <file>resources/textures/marble.jpg</file>
+        <file>resources/textures/metal.png</file>
     </qresource>
 </RCC>

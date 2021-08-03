@@ -51,6 +51,7 @@ SOURCES += \
     2.lighting/6.1multiple_lights/MultipleLights.cpp \
     3.model_loading/1.model_loading/ModelLoading.cpp \
     4.advanced_opengl/1.1depth_testing/DepthTesting.cpp \
+    4.advanced_opengl/2.stencil_testing/StencilTesting.cpp \
     main.cpp \
     MainWindow.cpp \
     utils/CameraUtil.cpp \
@@ -92,6 +93,7 @@ HEADERS += \
     2.lighting/6.1multiple_lights/MultipleLights.h \
     3.model_loading/1.model_loading/ModelLoading.h \
     4.advanced_opengl/1.1depth_testing/DepthTesting.h \
+    4.advanced_opengl/2.stencil_testing/StencilTesting.h \
     Config.h \
     MainWindow.h \
     utils/CameraUtil.h \

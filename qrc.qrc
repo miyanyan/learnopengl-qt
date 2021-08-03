@@ -60,5 +60,8 @@
         <file>4.advanced_opengl/1.1depth_testing/depth_testing_view.frag</file>
         <file>resources/textures/marble.jpg</file>
         <file>resources/textures/metal.png</file>
+        <file>4.advanced_opengl/2.stencil_testing/stencil_single_color.frag</file>
+        <file>4.advanced_opengl/2.stencil_testing/stencil_testing.frag</file>
+        <file>4.advanced_opengl/2.stencil_testing/stencil_testing.vert</file>
     </qresource>
 </RCC>

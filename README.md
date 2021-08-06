@@ -16,7 +16,7 @@ learn opengl with Qt, and it's directory structure is mostly like the [origin on
 * run it in debug/release mode
 * select a widget to show
 
-    ![main window](./image/window.png)
+    ![main window](./resources/readme/window.png)
 
 ## How to add a new widget
 

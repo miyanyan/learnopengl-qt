@@ -63,5 +63,11 @@
         <file>4.advanced_opengl/2.stencil_testing/stencil_single_color.frag</file>
         <file>4.advanced_opengl/2.stencil_testing/stencil_testing.frag</file>
         <file>4.advanced_opengl/2.stencil_testing/stencil_testing.vert</file>
+        <file>resources/textures/grass.png</file>
+        <file>4.advanced_opengl/3.1blending_discard/blending_discard.frag</file>
+        <file>4.advanced_opengl/3.1blending_discard/blending_discard.vert</file>
+        <file>resources/textures/window.png</file>
+        <file>4.advanced_opengl/3.2blending_sort/blending_sort.frag</file>
+        <file>4.advanced_opengl/3.2blending_sort/blending_sort.vert</file>
     </qresource>
 </RCC>

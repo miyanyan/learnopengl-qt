@@ -44,6 +44,8 @@
 #include "3.model_loading/1.model_loading/ModelLoading.h"
 #include "4.advanced_opengl/1.1depth_testing/DepthTesting.h"
 #include "4.advanced_opengl/2.stencil_testing/StencilTesting.h"
+#include "4.advanced_opengl/3.1blending_discard/BlendingDiscard.h"
+#include "4.advanced_opengl/3.2blending_sort/BlendingSort.h"
 
 
 class MainWindow : public QMainWindow

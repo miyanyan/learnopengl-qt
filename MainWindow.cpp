@@ -89,6 +89,8 @@ void MainWindow::registerMetaObject()
     //4.advanced_opengl
     m_metaObjectList << &DepthTesting::staticMetaObject;
     m_metaObjectList << &StencilTesting::staticMetaObject;
+    m_metaObjectList << &BlendingDiscard::staticMetaObject;
+    m_metaObjectList << &BlendingSort::staticMetaObject;
 
     //add QMetaObject to map and combox
     for(const QMetaObject* mo : m_metaObjectList){

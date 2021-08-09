@@ -46,6 +46,7 @@
 #include "4.advanced_opengl/2.stencil_testing/StencilTesting.h"
 #include "4.advanced_opengl/3.1blending_discard/BlendingDiscard.h"
 #include "4.advanced_opengl/3.2blending_sort/BlendingSort.h"
+#include "4.advanced_opengl/4.face_culling_exercise1/FaceCullingExercise1.h"
 
 
 class MainWindow : public QMainWindow

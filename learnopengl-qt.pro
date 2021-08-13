@@ -108,7 +108,8 @@ HEADERS += \
     MainWindow.h \
     utils/CameraUtil.h \
     utils/Mesh.h \
-    utils/ModelUtil.h
+    utils/ModelUtil.h \
+    utils/ShaderUtil.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

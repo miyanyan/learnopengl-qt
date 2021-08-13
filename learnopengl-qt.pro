@@ -55,6 +55,8 @@ SOURCES += \
     4.advanced_opengl/3.1blending_discard/BlendingDiscard.cpp \
     4.advanced_opengl/3.2blending_sort/BlendingSort.cpp \
     4.advanced_opengl/4.face_culling_exercise1/FaceCullingExercise1.cpp \
+    4.advanced_opengl/5.1framebuffers/Framebuffers.cpp \
+    4.advanced_opengl/5.2framebuffers_exercise1/FramebuffersExercise1.cpp \
     main.cpp \
     MainWindow.cpp \
     utils/CameraUtil.cpp \
@@ -100,6 +102,8 @@ HEADERS += \
     4.advanced_opengl/3.1blending_discard/BlendingDiscard.h \
     4.advanced_opengl/3.2blending_sort/BlendingSort.h \
     4.advanced_opengl/4.face_culling_exercise1/FaceCullingExercise1.h \
+    4.advanced_opengl/5.1framebuffers/Framebuffers.h \
+    4.advanced_opengl/5.2framebuffers_exercise1/FramebuffersExercise1.h \
     Config.h \
     MainWindow.h \
     utils/CameraUtil.h \

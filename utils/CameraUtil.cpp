@@ -14,7 +14,8 @@ CameraUtil::CameraUtil(QWidget *widget)
       m_cameraPos(0.0, 0.0, 3.0),
       m_cameraUp(0.0, 1.0, 0.0),
       m_timerId(0),
-      m_isMouseMoveDisabled(false)
+      m_isMouseMoveDisabled(false),
+      m_isPitchConstrained(true)
 {
     calculateCameraDirection();
     m_keyMap[FORWARD]   = Qt::Key_W;
@@ -148,6 +149,11 @@ void CameraUtil::setPitch(float value)
     calculateCameraDirection();
 }
 
+void CameraUtil::setPitchConstrained(bool flag)
+{
+    m_isPitchConstrained = flag;
+}
+
 float CameraUtil::getFov() const
 {
     return m_fov;
@@ -205,12 +211,14 @@ void CameraUtil::handleMouseMoveEvent(QMouseEvent *event)
     //更新欧拉角
     m_yaw += offsetX;
     m_pitch += offsetY;
-    //89° ≈ 1.55
-    if(m_pitch > 1.55){
-        m_pitch = 1.55;
-    }
-    else if(m_pitch < -1.55){
-        m_pitch = -1.55;
+    if (m_isPitchConstrained) {
+        //89° ≈ 1.55
+        if(m_pitch > 1.55){
+            m_pitch = 1.55;
+        }
+        else if(m_pitch < -1.55){
+            m_pitch = -1.55;
+        }
     }
 
     calculateCameraDirection();

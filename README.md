@@ -61,3 +61,7 @@ learn opengl with Qt, and it's directory structure is mostly like the [origin on
         }
     }
     ```
+
+## Notes
+
+1. ```glBindFramebuffer(GL_FRAMEBUFFER, 0)``` may not work in QOpenGLWidget, because 0 is not QOpenGLWidget's default framebuffer, use ```glBindFramebuffer(GL_FRAMEBUFFER, defaultFramebufferObject())```instead. Here is my [blog](https://www.cnblogs.com/miyanyan/p/15131720.html)

@@ -69,5 +69,9 @@
         <file>resources/textures/window.png</file>
         <file>4.advanced_opengl/3.2blending_sort/blending_sort.frag</file>
         <file>4.advanced_opengl/3.2blending_sort/blending_sort.vert</file>
+        <file>4.advanced_opengl/5.1framebuffers/framebuffers.frag</file>
+        <file>4.advanced_opengl/5.1framebuffers/framebuffers.vert</file>
+        <file>4.advanced_opengl/5.1framebuffers/framebuffers_screen.frag</file>
+        <file>4.advanced_opengl/5.1framebuffers/framebuffers_screen.vert</file>
     </qresource>
 </RCC>

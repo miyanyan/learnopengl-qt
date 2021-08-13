@@ -47,6 +47,8 @@
 #include "4.advanced_opengl/3.1blending_discard/BlendingDiscard.h"
 #include "4.advanced_opengl/3.2blending_sort/BlendingSort.h"
 #include "4.advanced_opengl/4.face_culling_exercise1/FaceCullingExercise1.h"
+#include "4.advanced_opengl/5.1framebuffers/Framebuffers.h"
+#include "4.advanced_opengl/5.2framebuffers_exercise1/FramebuffersExercise1.h"
 
 
 class MainWindow : public QMainWindow

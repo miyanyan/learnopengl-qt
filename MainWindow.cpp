@@ -92,6 +92,8 @@ void MainWindow::registerMetaObject()
     m_metaObjectList << &BlendingDiscard::staticMetaObject;
     m_metaObjectList << &BlendingSort::staticMetaObject;
     m_metaObjectList << &FaceCullingExercise1::staticMetaObject;
+    m_metaObjectList << &Framebuffers::staticMetaObject;
+    m_metaObjectList << &FramebuffersExercise1::staticMetaObject;
 
     //add QMetaObject to map and combox
     for(const QMetaObject* mo : m_metaObjectList){

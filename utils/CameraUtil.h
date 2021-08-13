@@ -42,6 +42,7 @@ public:
     //俯视角
     float getPitch() const;
     void setPitch(float value);
+    void setPitchConstrained(bool flag);
     //fov
     float getFov() const;
     void setFov(float value);
@@ -87,6 +88,7 @@ private:
     QPoint m_lastMousePos;
 
     bool m_isMouseMoveDisabled;
+    bool m_isPitchConstrained;
 };
 
 #endif // CAMERAUTIL_H

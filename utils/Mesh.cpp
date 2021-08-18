@@ -43,6 +43,34 @@ void Mesh::Draw(QOpenGLShaderProgram &shader)
     m_glFunc->glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, 0);
 }
 
+void Mesh::Draw(QOpenGLShaderProgram *shader)
+{
+    unsigned int diffuseNr  = 1;
+    unsigned int specularNr = 1;
+    unsigned int normalNr   = 1;
+    unsigned int heightNr   = 1;
+
+    for (unsigned int i = 0; i < textures.size(); ++i) {
+        m_glFunc->glActiveTexture(GL_TEXTURE0 + i); // 在绑定之前激活相应的纹理单元
+        // 获取纹理序号（diffuse_textureN 中的 N）
+        QString number;
+        QString name = textures[i]->type;
+        if (name == "texture_diffuse")
+            number = QString::number(diffuseNr++);
+        else if (name == "texture_specular")
+            number = QString::number(specularNr++);
+        else if (name == "texture_normal")
+            number = QString::number(normalNr++);
+        else if (name == "texture_height")
+            number = QString::number(heightNr++);
+        textures[i]->texture.bind();
+        shader->setUniformValue((name + number).toStdString().c_str(),i);
+    }
+    // 画网格
+    QOpenGLVertexArrayObject::Binder bind(&m_VAO);
+    m_glFunc->glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, 0);
+}
+
 /*!
  * \brief Mesh::setupMesh 绑定顶点和索引
  */

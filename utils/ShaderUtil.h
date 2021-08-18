@@ -4,7 +4,7 @@
 #include <QOpenGLShaderProgram>
 
 
-class ShaderUtil : QOpenGLShaderProgram
+class ShaderUtil : public QOpenGLShaderProgram
 {
 public:
     ShaderUtil(QString vertexPath, QString fragmentPath) {

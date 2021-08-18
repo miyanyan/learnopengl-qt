@@ -94,6 +94,8 @@ void MainWindow::registerMetaObject()
     m_metaObjectList << &FaceCullingExercise1::staticMetaObject;
     m_metaObjectList << &Framebuffers::staticMetaObject;
     m_metaObjectList << &FramebuffersExercise1::staticMetaObject;
+    m_metaObjectList << &CubemapsSkybox::staticMetaObject;
+    m_metaObjectList << &CubemapsEnvironmentMapping::staticMetaObject;
 
     //add QMetaObject to map and combox
     for(const QMetaObject* mo : m_metaObjectList){

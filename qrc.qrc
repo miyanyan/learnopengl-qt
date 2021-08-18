@@ -73,5 +73,17 @@
         <file>4.advanced_opengl/5.1framebuffers/framebuffers.vert</file>
         <file>4.advanced_opengl/5.1framebuffers/framebuffers_screen.frag</file>
         <file>4.advanced_opengl/5.1framebuffers/framebuffers_screen.vert</file>
+        <file>resources/textures/skybox/back.jpg</file>
+        <file>resources/textures/skybox/bottom.jpg</file>
+        <file>resources/textures/skybox/front.jpg</file>
+        <file>resources/textures/skybox/left.jpg</file>
+        <file>resources/textures/skybox/right.jpg</file>
+        <file>resources/textures/skybox/top.jpg</file>
+        <file>4.advanced_opengl/6.1cubemaps_skybox/cubemaps.frag</file>
+        <file>4.advanced_opengl/6.1cubemaps_skybox/cubemaps.vert</file>
+        <file>4.advanced_opengl/6.1cubemaps_skybox/skybox.frag</file>
+        <file>4.advanced_opengl/6.1cubemaps_skybox/skybox.vert</file>
+        <file>4.advanced_opengl/6.2cubemaps_environment_mapping/cubemaps.frag</file>
+        <file>4.advanced_opengl/6.2cubemaps_environment_mapping/cubemaps.vert</file>
     </qresource>
 </RCC>

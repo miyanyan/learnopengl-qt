@@ -49,6 +49,7 @@ public:
     ~Mesh();
 
     void Draw(QOpenGLShaderProgram& shader);
+    void Draw(QOpenGLShaderProgram* shader);
     void setupMesh();
 
 private:

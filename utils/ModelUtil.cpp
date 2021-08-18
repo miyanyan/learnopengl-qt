@@ -31,6 +31,14 @@ void ModelUtil::Draw(QOpenGLShaderProgram &shader)
     }
 }
 
+void ModelUtil::Draw(QOpenGLShaderProgram *shader)
+{
+    if (shader == nullptr) return;
+    for(auto& mesh : m_meshes){
+        mesh->Draw(shader);
+    }
+}
+
 void ModelUtil::destory()
 {
     for(auto&it : m_texturesLoaded){

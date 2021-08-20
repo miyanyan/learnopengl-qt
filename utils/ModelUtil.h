@@ -12,7 +12,7 @@
 class ModelUtil
 {
 public:
-    ModelUtil(QString path,QOpenGLContext* context);
+    ModelUtil(QString path, QOpenGLContext* context);
     ~ModelUtil();
     void Draw(QOpenGLShaderProgram& shader);
     void Draw(QOpenGLShaderProgram* shader);

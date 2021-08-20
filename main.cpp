@@ -13,6 +13,7 @@ int main(int argc, char *argv[])
     //版本要一致 ： class MyWidget : public QOpenGLWidget, protected QOpenGLFunctions_3_3_Core
     format.setVersion(3, 3);
     format.setProfile(QSurfaceFormat::CoreProfile);
+    format.setOption(QSurfaceFormat::DebugContext);
     QSurfaceFormat::setDefaultFormat(format);
 
     MainWindow w;

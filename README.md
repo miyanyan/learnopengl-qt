@@ -65,3 +65,23 @@ learn opengl with Qt, and it's directory structure is mostly like the [origin on
 ## Notes
 
 1. ```glBindFramebuffer(GL_FRAMEBUFFER, 0)``` may not work in QOpenGLWidget, because 0 is not QOpenGLWidget's default framebuffer, use ```glBindFramebuffer(GL_FRAMEBUFFER, defaultFramebufferObject())```instead. Here is my [blog](https://www.cnblogs.com/miyanyan/p/15131720.html)
+
+2. It seems that Qt does not have UBO(uniform buffer object), thus I made a class called ```OpenGLUniformbufferObject```. And, you must pay attention:
+
+    ```c++
+    // wrong
+    class OpenGLUniformbufferObject : public QOpenGLFunctions_3_3_Core
+    {
+        //...
+        glGetActiveUniformBlockiv(m_shaderId, m_uniformBlockIndex, GL_UNIFORM_BLOCK_DATA_SIZE, &m_uboSize);
+    }
+    // right
+    class OpenGLUniformbufferObject
+    {
+        //...
+        // get current opengl function
+        QOpenGLFunctions_3_3_Core* m_glFunc = QOpenGLContext::currentContext()->versionFunctions<QOpenGLFunctions_3_3_Core>();
+        m_glFunc->glGetActiveUniformBlockiv(m_shaderId, m_uniformBlockIndex, GL_UNIFORM_BLOCK_DATA_SIZE, &m_uboSize);
+    }
+    
+    ```

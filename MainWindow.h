@@ -51,6 +51,7 @@
 #include "4.advanced_opengl/5.2framebuffers_exercise1/FramebuffersExercise1.h"
 #include "4.advanced_opengl/6.1cubemaps_skybox/CubemapsSkybox.h"
 #include "4.advanced_opengl/6.2cubemaps_environment_mapping/CubemapsEnvironmentMapping.h"
+#include "4.advanced_opengl/8.advanced_glsl_ubo/AdvancedGlslUbo.h"
 
 
 class MainWindow : public QMainWindow

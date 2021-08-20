@@ -59,11 +59,13 @@ SOURCES += \
     4.advanced_opengl/5.2framebuffers_exercise1/FramebuffersExercise1.cpp \
     4.advanced_opengl/6.1cubemaps_skybox/CubemapsSkybox.cpp \
     4.advanced_opengl/6.2cubemaps_environment_mapping/CubemapsEnvironmentMapping.cpp \
+    4.advanced_opengl/8.advanced_glsl_ubo/AdvancedGlslUbo.cpp \
     main.cpp \
     MainWindow.cpp \
     utils/CameraUtil.cpp \
     utils/Mesh.cpp \
-    utils/ModelUtil.cpp
+    utils/ModelUtil.cpp \
+    utils/OpenGLUniformbufferObject.cpp
 
 HEADERS += \
     1.getting_started/1.1hello_window/HelloWindow.h \
@@ -108,12 +110,14 @@ HEADERS += \
     4.advanced_opengl/5.2framebuffers_exercise1/FramebuffersExercise1.h \
     4.advanced_opengl/6.1cubemaps_skybox/CubemapsSkybox.h \
     4.advanced_opengl/6.2cubemaps_environment_mapping/CubemapsEnvironmentMapping.h \
+    4.advanced_opengl/8.advanced_glsl_ubo/AdvancedGlslUbo.h \
     Config.h \
     MainWindow.h \
     utils/CameraUtil.h \
     utils/CubemapTextureUtil.h \
     utils/Mesh.h \
     utils/ModelUtil.h \
+    utils/OpenGLUniformbufferObject.h \
     utils/ShaderUtil.h
 
 # Default rules for deployment.

@@ -85,5 +85,10 @@
         <file>4.advanced_opengl/6.1cubemaps_skybox/skybox.vert</file>
         <file>4.advanced_opengl/6.2cubemaps_environment_mapping/cubemaps.frag</file>
         <file>4.advanced_opengl/6.2cubemaps_environment_mapping/cubemaps.vert</file>
+        <file>4.advanced_opengl/8.advanced_glsl_ubo/advanced_glsl.vert</file>
+        <file>4.advanced_opengl/8.advanced_glsl_ubo/blue.frag</file>
+        <file>4.advanced_opengl/8.advanced_glsl_ubo/green.frag</file>
+        <file>4.advanced_opengl/8.advanced_glsl_ubo/red.frag</file>
+        <file>4.advanced_opengl/8.advanced_glsl_ubo/yellow.frag</file>
     </qresource>
 </RCC>

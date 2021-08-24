@@ -55,6 +55,7 @@
 #include "4.advanced_opengl/9.1geometry_shader_houses/GeometryShaderHouses.h"
 #include "4.advanced_opengl/9.2geometry_shader_exploding/GeometryShaderExploding.h"
 #include "4.advanced_opengl/9.3geometry_shader_normals/GeometryShaderNormals.h"
+#include "4.advanced_opengl/10.1instancing_quads/InstancingQuads.h"
 
 
 class MainWindow : public QMainWindow

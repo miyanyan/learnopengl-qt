@@ -101,5 +101,7 @@
         <file>4.advanced_opengl/9.3geometry_shader_normals/normal_visualization.frag</file>
         <file>4.advanced_opengl/9.3geometry_shader_normals/normal_visualization.geom</file>
         <file>4.advanced_opengl/9.3geometry_shader_normals/normal_visualization.vert</file>
+        <file>4.advanced_opengl/10.1instancing_quads/instancing.frag</file>
+        <file>4.advanced_opengl/10.1instancing_quads/instancing.vert</file>
     </qresource>
 </RCC>

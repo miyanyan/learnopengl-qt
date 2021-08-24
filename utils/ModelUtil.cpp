@@ -4,9 +4,16 @@
 ModelUtil::ModelUtil(QString path, QOpenGLContext* context)
     : m_context(context)
     , directory(path)
+    , m_positiveX(FLT_MIN)
+    , m_positiveY(FLT_MIN)
+    , m_positiveZ(FLT_MIN)
+    , m_negativeX(FLT_MAX)
+    , m_negativeY(FLT_MAX)
+    , m_negativeZ(FLT_MAX)
+    , m_scaleFactor(1.0)
 {
     Assimp::Importer import;
-    const aiScene *scene = import.ReadFile(directory.absolutePath().toLocal8Bit(), aiProcess_Triangulate | aiProcess_FlipUVs);
+    const aiScene *scene = import.ReadFile(directory.absolutePath().toLocal8Bit(), aiProcess_Triangulate | aiProcess_GenSmoothNormals | aiProcess_FlipUVs | aiProcess_CalcTangentSpace);
     if (!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode) {
         qDebug() << "ERROR::ASSIMP::"<<import.GetErrorString() << endl;
         return;
@@ -14,6 +21,7 @@ ModelUtil::ModelUtil(QString path, QOpenGLContext* context)
     qDebug() << "ASSIMP has loaded :" << directory.absolutePath();
     directory.cdUp();
     processNode(scene->mRootNode, scene);
+    calculateNDCParam();
 }
 
 ModelUtil::~ModelUtil()
@@ -46,6 +54,20 @@ void ModelUtil::destory()
     }
 }
 
+/*!
+ * \brief ModelUtil::getNDCMatrix 转换为NDC坐标系所需的矩阵
+ * \return
+ */
+QMatrix4x4 ModelUtil::getNDCMatrix()
+{
+    return m_modelMatrix;
+}
+
+float ModelUtil::getNDCScaleFactor()
+{
+    return m_scaleFactor;
+}
+
 void ModelUtil::processNode(aiNode *node, const aiScene *scene)
 {
 
@@ -71,6 +93,12 @@ std::unique_ptr<Mesh> ModelUtil::processMesh(aiMesh *mesh, const aiScene *scene)
         Vertex vertex;
         // 位置
         vertex.Position = QVector3D(mesh->mVertices[i].x, mesh->mVertices[i].y, mesh->mVertices[i].z);
+        m_positiveX = std::max(m_positiveX, vertex.Position.x());
+        m_positiveY = std::max(m_positiveX, vertex.Position.y());
+        m_positiveZ = std::max(m_positiveX, vertex.Position.z());
+        m_negativeX = std::min(m_positiveX, vertex.Position.x());
+        m_negativeY = std::min(m_positiveX, vertex.Position.y());
+        m_negativeZ = std::min(m_positiveX, vertex.Position.z());
         // 法向量N
         if (mesh->mNormals) {
             vertex.Normal = QVector3D(mesh->mNormals[i].x, mesh->mNormals[i].y, mesh->mNormals[i].z);
@@ -151,4 +179,28 @@ std::vector<Texture*> ModelUtil::loadMaterialTextures(aiMaterial *mat, aiTexture
         }
     }
     return textures;
+}
+
+void ModelUtil::calculateNDCParam()
+{
+    if (m_positiveX == FLT_MIN || m_positiveY == FLT_MIN || m_positiveZ == FLT_MIN ||
+        m_negativeX == FLT_MAX || m_negativeY == FLT_MAX || m_negativeZ == FLT_MAX)
+    {
+        return;
+    }
+
+    float maxLen = m_positiveX - m_negativeX;
+    maxLen = std::max(maxLen, m_positiveY - m_negativeY);
+    maxLen = std::max(maxLen, m_positiveZ - m_negativeZ);
+
+    double centerX = (m_positiveX + m_negativeX) / 2;
+    double centerY = (m_positiveY + m_negativeY) / 2;
+    double centerZ = (m_positiveZ + m_negativeZ) / 2;
+
+    m_modelMatrix.setToIdentity();
+    m_modelMatrix.translate(-centerX, -centerY, -centerZ);
+    if (maxLen > 0) {
+        m_scaleFactor = 2.0 / maxLen;
+    }
+    m_modelMatrix.scale(m_scaleFactor);
 }

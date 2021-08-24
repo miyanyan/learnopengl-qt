@@ -17,6 +17,8 @@ public:
     void Draw(QOpenGLShaderProgram& shader);
     void Draw(QOpenGLShaderProgram* shader);
     void destory();
+    QMatrix4x4 getNDCMatrix();
+    float getNDCScaleFactor();
 
 private:
     // opengl函数入口
@@ -32,5 +34,12 @@ private:
     std::unique_ptr<Mesh> processMesh(aiMesh *mesh, const aiScene *scene);
     //加载材质纹理
     std::vector<Texture*> loadMaterialTextures(aiMaterial *mat, aiTextureType type,QString typeName);
+
+    // to NDC
+    void calculateNDCParam();
+    float m_positiveX, m_positiveY, m_positiveZ;
+    float m_negativeX, m_negativeY, m_negativeZ;
+    float m_scaleFactor;
+    QMatrix4x4 m_modelMatrix;
 };
 #endif // MODEL_H

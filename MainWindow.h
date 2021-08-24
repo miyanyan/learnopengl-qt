@@ -52,6 +52,9 @@
 #include "4.advanced_opengl/6.1cubemaps_skybox/CubemapsSkybox.h"
 #include "4.advanced_opengl/6.2cubemaps_environment_mapping/CubemapsEnvironmentMapping.h"
 #include "4.advanced_opengl/8.advanced_glsl_ubo/AdvancedGlslUbo.h"
+#include "4.advanced_opengl/9.1geometry_shader_houses/GeometryShaderHouses.h"
+#include "4.advanced_opengl/9.2geometry_shader_exploding/GeometryShaderExploding.h"
+#include "4.advanced_opengl/9.3geometry_shader_normals/GeometryShaderNormals.h"
 
 
 class MainWindow : public QMainWindow

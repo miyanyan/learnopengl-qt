@@ -60,6 +60,9 @@ SOURCES += \
     4.advanced_opengl/6.1cubemaps_skybox/CubemapsSkybox.cpp \
     4.advanced_opengl/6.2cubemaps_environment_mapping/CubemapsEnvironmentMapping.cpp \
     4.advanced_opengl/8.advanced_glsl_ubo/AdvancedGlslUbo.cpp \
+    4.advanced_opengl/9.1geometry_shader_houses/GeometryShaderHouses.cpp \
+    4.advanced_opengl/9.2geometry_shader_exploding/GeometryShaderExploding.cpp \
+    4.advanced_opengl/9.3geometry_shader_normals/GeometryShaderNormals.cpp \
     main.cpp \
     MainWindow.cpp \
     utils/CameraUtil.cpp \
@@ -111,6 +114,9 @@ HEADERS += \
     4.advanced_opengl/6.1cubemaps_skybox/CubemapsSkybox.h \
     4.advanced_opengl/6.2cubemaps_environment_mapping/CubemapsEnvironmentMapping.h \
     4.advanced_opengl/8.advanced_glsl_ubo/AdvancedGlslUbo.h \
+    4.advanced_opengl/9.1geometry_shader_houses/GeometryShaderHouses.h \
+    4.advanced_opengl/9.2geometry_shader_exploding/GeometryShaderExploding.h \
+    4.advanced_opengl/9.3geometry_shader_normals/GeometryShaderNormals.h \
     Config.h \
     MainWindow.h \
     utils/CameraUtil.h \

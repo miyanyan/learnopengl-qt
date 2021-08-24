@@ -97,6 +97,9 @@ void MainWindow::registerMetaObject()
     m_metaObjectList << &CubemapsSkybox::staticMetaObject;
     m_metaObjectList << &CubemapsEnvironmentMapping::staticMetaObject;
     m_metaObjectList << &AdvancedGlslUbo::staticMetaObject;
+    m_metaObjectList << &GeometryShaderHouses::staticMetaObject;
+    m_metaObjectList << &GeometryShaderExploding::staticMetaObject;
+    m_metaObjectList << &GeometryShaderNormals::staticMetaObject;
 
     //add QMetaObject to map and combox
     for(const QMetaObject* mo : m_metaObjectList){

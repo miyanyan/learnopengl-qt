@@ -90,5 +90,16 @@
         <file>4.advanced_opengl/8.advanced_glsl_ubo/green.frag</file>
         <file>4.advanced_opengl/8.advanced_glsl_ubo/red.frag</file>
         <file>4.advanced_opengl/8.advanced_glsl_ubo/yellow.frag</file>
+        <file>4.advanced_opengl/9.1geometry_shader_houses/geometry_shader_houses.frag</file>
+        <file>4.advanced_opengl/9.1geometry_shader_houses/geometry_shader_houses.geom</file>
+        <file>4.advanced_opengl/9.1geometry_shader_houses/geometry_shader_houses.vert</file>
+        <file>4.advanced_opengl/9.2geometry_shader_exploding/geometry_shader_exploding.frag</file>
+        <file>4.advanced_opengl/9.2geometry_shader_exploding/geometry_shader_exploding.geom</file>
+        <file>4.advanced_opengl/9.2geometry_shader_exploding/geometry_shader_exploding.vert</file>
+        <file>4.advanced_opengl/9.3geometry_shader_normals/default.frag</file>
+        <file>4.advanced_opengl/9.3geometry_shader_normals/default.vert</file>
+        <file>4.advanced_opengl/9.3geometry_shader_normals/normal_visualization.frag</file>
+        <file>4.advanced_opengl/9.3geometry_shader_normals/normal_visualization.geom</file>
+        <file>4.advanced_opengl/9.3geometry_shader_normals/normal_visualization.vert</file>
     </qresource>
 </RCC>

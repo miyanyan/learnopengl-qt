@@ -103,5 +103,11 @@
         <file>4.advanced_opengl/9.3geometry_shader_normals/normal_visualization.vert</file>
         <file>4.advanced_opengl/10.1instancing_quads/instancing.frag</file>
         <file>4.advanced_opengl/10.1instancing_quads/instancing.vert</file>
+        <file>4.advanced_opengl/10.2asteroids/asteroids.frag</file>
+        <file>4.advanced_opengl/10.2asteroids/asteroids.vert</file>
+        <file>4.advanced_opengl/10.3asteroids_instanced/asteroids.frag</file>
+        <file>4.advanced_opengl/10.3asteroids_instanced/asteroids.vert</file>
+        <file>4.advanced_opengl/10.3asteroids_instanced/planet.frag</file>
+        <file>4.advanced_opengl/10.3asteroids_instanced/planet.vert</file>
     </qresource>
 </RCC>

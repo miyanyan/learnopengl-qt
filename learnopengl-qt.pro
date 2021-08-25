@@ -52,6 +52,8 @@ SOURCES += \
     3.model_loading/1.model_loading/ModelLoading.cpp \
     4.advanced_opengl/1.1depth_testing/DepthTesting.cpp \
     4.advanced_opengl/10.1instancing_quads/InstancingQuads.cpp \
+    4.advanced_opengl/10.2asteroids/Asteroids.cpp \
+    4.advanced_opengl/10.3asteroids_instanced/AsteroidsInstanced.cpp \
     4.advanced_opengl/2.stencil_testing/StencilTesting.cpp \
     4.advanced_opengl/3.1blending_discard/BlendingDiscard.cpp \
     4.advanced_opengl/3.2blending_sort/BlendingSort.cpp \
@@ -107,6 +109,8 @@ HEADERS += \
     3.model_loading/1.model_loading/ModelLoading.h \
     4.advanced_opengl/1.1depth_testing/DepthTesting.h \
     4.advanced_opengl/10.1instancing_quads/InstancingQuads.h \
+    4.advanced_opengl/10.2asteroids/Asteroids.h \
+    4.advanced_opengl/10.3asteroids_instanced/AsteroidsInstanced.h \
     4.advanced_opengl/2.stencil_testing/StencilTesting.h \
     4.advanced_opengl/3.1blending_discard/BlendingDiscard.h \
     4.advanced_opengl/3.2blending_sort/BlendingSort.h \

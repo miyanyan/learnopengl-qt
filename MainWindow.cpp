@@ -100,7 +100,8 @@ void MainWindow::registerMetaObject()
     m_metaObjectList << &GeometryShaderHouses::staticMetaObject;
     m_metaObjectList << &GeometryShaderExploding::staticMetaObject;
     m_metaObjectList << &GeometryShaderNormals::staticMetaObject;
-    m_metaObjectList << &InstancingQuads::staticMetaObject;
+    m_metaObjectList << &Asteroids::staticMetaObject;
+    m_metaObjectList << &AsteroidsInstanced::staticMetaObject;
 
     //add QMetaObject to map and combox
     for(const QMetaObject* mo : m_metaObjectList){

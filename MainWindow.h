@@ -56,6 +56,8 @@
 #include "4.advanced_opengl/9.2geometry_shader_exploding/GeometryShaderExploding.h"
 #include "4.advanced_opengl/9.3geometry_shader_normals/GeometryShaderNormals.h"
 #include "4.advanced_opengl/10.1instancing_quads/InstancingQuads.h"
+#include "4.advanced_opengl/10.2asteroids/Asteroids.h"
+#include "4.advanced_opengl/10.3asteroids_instanced/AsteroidsInstanced.h"
 
 
 class MainWindow : public QMainWindow

@@ -6,7 +6,7 @@ CameraUtil::CameraUtil(QWidget *widget)
     : m_widget(widget),
       m_yaw(-90.0),
       m_pitch(0.0),
-      m_moveSpeed(1.0),
+      m_moveSpeed(1.8),
       m_sensitivity(0.01),
       m_fov(45.0),
       m_lastFrame(0.0),

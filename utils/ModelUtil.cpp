@@ -27,14 +27,14 @@ ModelUtil::ModelUtil(QString path, QOpenGLContext* context)
 ModelUtil::~ModelUtil()
 {
     // delete textures
-    for(auto&it : m_texturesLoaded){
-        delete it.second;
+    for(auto&texture : texturesLoaded){
+        delete texture;
     }
 }
 
 void ModelUtil::Draw(QOpenGLShaderProgram &shader)
 {
-    for(auto& mesh : m_meshes){
+    for(auto& mesh : meshes){
         mesh->Draw(shader);
     }
 }
@@ -42,15 +42,15 @@ void ModelUtil::Draw(QOpenGLShaderProgram &shader)
 void ModelUtil::Draw(QOpenGLShaderProgram *shader)
 {
     if (shader == nullptr) return;
-    for(auto& mesh : m_meshes){
+    for(auto& mesh : meshes){
         mesh->Draw(shader);
     }
 }
 
 void ModelUtil::destory()
 {
-    for(auto&it : m_texturesLoaded){
-        it.second->texture.destroy();
+    for(auto&texture : texturesLoaded){
+        texture->texture.destroy();
     }
 }
 
@@ -74,7 +74,7 @@ void ModelUtil::processNode(aiNode *node, const aiScene *scene)
     // 处理节点所有的网格（如果有的话）
     for (unsigned int i = 0; i < node->mNumMeshes; ++i) {
         aiMesh *mesh = scene->mMeshes[node->mMeshes[i]];
-        m_meshes.push_back(processMesh(mesh, scene));
+        meshes.push_back(processMesh(mesh, scene));
 
     }
     // 接下来对它的子节点重复这一过程
@@ -158,20 +158,26 @@ std::vector<Texture*> ModelUtil::loadMaterialTextures(aiMaterial *mat, aiTexture
     for (unsigned int i = 0; i < mat->GetTextureCount(type); ++i) {
         aiString str;
         mat->GetTexture(type, i, &str);
-        std::string strPath(str.C_Str());
+        QString strPath(str.C_Str());
         // 检查纹理是否在之前加载过，如果是，则继续到下一个迭代:跳过加载新纹理
-        if (m_texturesLoaded.find(strPath) != m_texturesLoaded.end()) {
-            textures.push_back(m_texturesLoaded[strPath]);
-        } else {
+        bool skip = false;
+        for (auto& texture : texturesLoaded) {
+            if (texture->path == strPath) {
+                textures.push_back(texture);
+                skip = true;
+                break;
+            }
+        }
+        if (!skip) {
             // 如果材质还没有加载，加载它
-            QImage data(directory.filePath(str.C_Str()));
+            QImage data(directory.filePath(strPath));
             if(!data.isNull()){
                 Texture* texture = new Texture;
                 texture->texture.setData(data);
                 texture->type = typeName;
-                texture->path = str.C_Str();
+                texture->path = strPath;
                 textures.push_back(texture);
-                m_texturesLoaded[strPath] = texture;  // store it as texture loaded for entire model, to ensure we won't unnecesery load duplicate textures.
+                texturesLoaded.push_back(texture);  // store it as texture loaded for entire model, to ensure we won't unnecesery load duplicate textures.
             }
             else{
                 qDebug() << "invalid texture : " << directory.filePath(str.C_Str());

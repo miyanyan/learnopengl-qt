@@ -19,14 +19,14 @@ public:
     void destory();
     QMatrix4x4 getNDCMatrix();
     float getNDCScaleFactor();
+    // 数据
+    std::vector<std::unique_ptr<Mesh>> meshes; //网格
+    std::vector<Texture*> texturesLoaded; // 缓存已加载的纹理
 
 private:
     // opengl函数入口
     QOpenGLContext* m_context;
-    /*  模型数据  */
-    std::unordered_map<std::string, Texture*> m_texturesLoaded; // 缓存已加载的纹理
-    std::vector<std::unique_ptr<Mesh>> m_meshes;                //网格
-    QDir directory;                                             //模型所在路径
+    QDir directory; //模型所在路径
 
     //递归遍历结点
     void processNode(aiNode *node, const aiScene *scene);

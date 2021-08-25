@@ -51,6 +51,7 @@ public:
     void Draw(QOpenGLShaderProgram& shader);
     void Draw(QOpenGLShaderProgram* shader);
     void setupMesh();
+    QOpenGLVertexArrayObject* getVAO();
 
 private:
     /*  渲染数据  */

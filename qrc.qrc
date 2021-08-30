@@ -109,5 +109,8 @@
         <file>4.advanced_opengl/10.3asteroids_instanced/asteroids.vert</file>
         <file>4.advanced_opengl/10.3asteroids_instanced/planet.frag</file>
         <file>4.advanced_opengl/10.3asteroids_instanced/planet.vert</file>
+        <file>5.advanced_lighting/1.advanced_lighting/advanced_lighting.frag</file>
+        <file>5.advanced_lighting/1.advanced_lighting/advanced_lighting.vert</file>
+        <file>resources/textures/wood.png</file>
     </qresource>
 </RCC>

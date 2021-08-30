@@ -66,6 +66,7 @@ SOURCES += \
     4.advanced_opengl/9.1geometry_shader_houses/GeometryShaderHouses.cpp \
     4.advanced_opengl/9.2geometry_shader_exploding/GeometryShaderExploding.cpp \
     4.advanced_opengl/9.3geometry_shader_normals/GeometryShaderNormals.cpp \
+    5.advanced_lighting/1.advanced_lighting/AdvancedLighting.cpp \
     main.cpp \
     MainWindow.cpp \
     utils/CameraUtil.cpp \
@@ -123,6 +124,7 @@ HEADERS += \
     4.advanced_opengl/9.1geometry_shader_houses/GeometryShaderHouses.h \
     4.advanced_opengl/9.2geometry_shader_exploding/GeometryShaderExploding.h \
     4.advanced_opengl/9.3geometry_shader_normals/GeometryShaderNormals.h \
+    5.advanced_lighting/1.advanced_lighting/AdvancedLighting.h \
     Config.h \
     MainWindow.h \
     utils/CameraUtil.h \

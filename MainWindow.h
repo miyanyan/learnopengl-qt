@@ -58,6 +58,7 @@
 #include "4.advanced_opengl/10.1instancing_quads/InstancingQuads.h"
 #include "4.advanced_opengl/10.2asteroids/Asteroids.h"
 #include "4.advanced_opengl/10.3asteroids_instanced/AsteroidsInstanced.h"
+#include "5.advanced_lighting/1.advanced_lighting/AdvancedLighting.h"
 
 
 class MainWindow : public QMainWindow

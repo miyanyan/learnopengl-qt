@@ -6,9 +6,10 @@ learn opengl with Qt, and it's directory structure is mostly like the [origin on
 
 ### install libraries
 
-* download [Qt](https://www.qt.io/download)
-* install [assimp](https://github.com/assimp/assimp) and make sure that the lib path is correct in ```learnopengl-qt.pro``` bottom line ```LIBS += -L$$PWD/thirdparty/assimp_x64-windows/lib/ -lassimp-vc141-mt```
-* this project is build in ```Qt 5.9.9 MSVC2017 64bit```, the compiled library is in ```./thirdparty/```, make sure ```*.dll``` is in the same path with ```*.exe```
+* install [Qt](https://www.qt.io/download)
+* install [vcpkg](https://github.com/microsoft/vcpkg)
+  * set `VCPKG_ROOT` environment variable to the vcpkg root dir
+  * install assimp `vcpkg install assimp`
 
 ### run
 

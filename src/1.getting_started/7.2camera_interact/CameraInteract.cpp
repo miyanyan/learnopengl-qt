@@ -1,5 +1,7 @@
 #include "CameraInteract.h"
 
+#include <cmath>
+
 #include <QDebug>
 #include <QTime>
 #include <QMessageBox>
@@ -18,7 +20,7 @@ CameraInteract::CameraInteract(QWidget *parent)
       m_sensitivity(0.01),
       m_fov(45.0)
 {
-    m_cameraDirection = {cos(m_yaw) * cos(m_pitch), sin(m_pitch), sin(m_yaw) * cos(m_pitch)};
+    m_cameraDirection = {std::cos(m_yaw) * std::cos(m_pitch), std::sin(m_pitch), std::sin(m_yaw) * std::cos(m_pitch)};
     m_cameraDirection.normalize();
 
     setMouseTracking(true);
@@ -267,7 +269,7 @@ void CameraInteract::mouseMoveEvent(QMouseEvent *event)
         m_pitch = -M_PI / 2.0 + 0.1;
     }
 
-    m_cameraDirection = {cos(m_yaw) * cos(m_pitch), sin(m_pitch), sin(m_yaw) * cos(m_pitch)};
+    m_cameraDirection = { std::cos(m_yaw) * std::cos(m_pitch), std::sin(m_pitch), std::sin(m_yaw) * std::cos(m_pitch)};
     m_cameraDirection.normalize();
 
     update();

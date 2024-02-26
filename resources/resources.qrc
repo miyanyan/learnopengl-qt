@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/">
+        <file>textures/awesomeface.png</file>
+        <file>textures/container.jpg</file>
+        <file>textures/container2.png</file>
+        <file>textures/container2_specular.png</file>
+        <file>textures/grass.png</file>
+        <file>textures/marble.jpg</file>
+        <file>textures/matrix.jpg</file>
+        <file>textures/metal.png</file>
+        <file>textures/window.png</file>
+        <file>textures/wood.png</file>
+        <file>objects/nanosuit/nanosuit.obj</file>
+        <file>textures/skybox/back.jpg</file>
+        <file>textures/skybox/bottom.jpg</file>
+        <file>textures/skybox/front.jpg</file>
+        <file>textures/skybox/left.jpg</file>
+        <file>textures/skybox/right.jpg</file>
+        <file>textures/skybox/top.jpg</file>
+    </qresource>
+</RCC>

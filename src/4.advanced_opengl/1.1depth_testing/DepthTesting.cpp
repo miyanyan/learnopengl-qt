@@ -153,7 +153,7 @@ void DepthTesting::initializeGL()
     //MVP
     {
         m_view.translate({0.0, 0.0, -3.0});
-        m_projection.perspective(45.0, 1.0 * width() / height(), 0.1, 100.0);
+        m_projection.perspective(45.0f, 1.0f * width() / height(), 0.1f, 100.0f);
     }
     //相机类初始化
     m_camera.init();

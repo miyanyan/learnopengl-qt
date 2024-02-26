@@ -9,8 +9,6 @@
         <file>1.getting_started/3.2shaders_interpolation/shaders_interpolation1.frag</file>
         <file>1.getting_started/4.1textures/textures.frag</file>
         <file>1.getting_started/4.1textures/textures.vert</file>
-        <file>resources/textures/awesomeface.png</file>
-        <file>resources/textures/container.jpg</file>
         <file>1.getting_started/4.4textures_exercise2/textures_exercise2.frag</file>
         <file>1.getting_started/4.4textures_exercise2/textures_exercise2.vert</file>
         <file>1.getting_started/4.6textures_exercise4/textures_exercise4.frag</file>
@@ -35,13 +33,10 @@
         <file>2.lighting/3.1materials/materials.vert</file>
         <file>2.lighting/4.1lighting_maps_diffuse_map/lighting_maps_diffuse_map.frag</file>
         <file>2.lighting/4.1lighting_maps_diffuse_map/lighting_maps_diffuse_map.vert</file>
-        <file>resources/textures/container2.png</file>
         <file>2.lighting/4.2lighting_maps_specular_map/lighting_maps_specular_map.frag</file>
         <file>2.lighting/4.2lighting_maps_specular_map/lighting_maps_specular_map.vert</file>
-        <file>resources/textures/container2_specular.png</file>
         <file>2.lighting/4.4lighting_maps_exercise4/lighting_maps_exercise4.frag</file>
         <file>2.lighting/4.4lighting_maps_exercise4/lighting_maps_exercise4.vert</file>
-        <file>resources/textures/matrix.jpg</file>
         <file>2.lighting/4.3lighting_maps_exercise2/lighting_maps_exercise2.frag</file>
         <file>2.lighting/4.3lighting_maps_exercise2/lighting_maps_exercise2.vert</file>
         <file>2.lighting/5.1light_casters_directional/light_casters_directional.frag</file>
@@ -54,31 +49,20 @@
         <file>2.lighting/6.1multiple_lights/multiple_lights.vert</file>
         <file>2.lighting/6.1multiple_lights/light_cube.frag</file>
         <file>2.lighting/6.1multiple_lights/light_cube.vert</file>
-        <file>resources/objects/nanosuit/nanosuit.obj</file>
         <file>4.advanced_opengl/1.1depth_testing/depth_testing.frag</file>
         <file>4.advanced_opengl/1.1depth_testing/depth_testing.vert</file>
         <file>4.advanced_opengl/1.1depth_testing/depth_testing_view.frag</file>
-        <file>resources/textures/marble.jpg</file>
-        <file>resources/textures/metal.png</file>
         <file>4.advanced_opengl/2.stencil_testing/stencil_single_color.frag</file>
         <file>4.advanced_opengl/2.stencil_testing/stencil_testing.frag</file>
         <file>4.advanced_opengl/2.stencil_testing/stencil_testing.vert</file>
-        <file>resources/textures/grass.png</file>
         <file>4.advanced_opengl/3.1blending_discard/blending_discard.frag</file>
         <file>4.advanced_opengl/3.1blending_discard/blending_discard.vert</file>
-        <file>resources/textures/window.png</file>
         <file>4.advanced_opengl/3.2blending_sort/blending_sort.frag</file>
         <file>4.advanced_opengl/3.2blending_sort/blending_sort.vert</file>
         <file>4.advanced_opengl/5.1framebuffers/framebuffers.frag</file>
         <file>4.advanced_opengl/5.1framebuffers/framebuffers.vert</file>
         <file>4.advanced_opengl/5.1framebuffers/framebuffers_screen.frag</file>
         <file>4.advanced_opengl/5.1framebuffers/framebuffers_screen.vert</file>
-        <file>resources/textures/skybox/back.jpg</file>
-        <file>resources/textures/skybox/bottom.jpg</file>
-        <file>resources/textures/skybox/front.jpg</file>
-        <file>resources/textures/skybox/left.jpg</file>
-        <file>resources/textures/skybox/right.jpg</file>
-        <file>resources/textures/skybox/top.jpg</file>
         <file>4.advanced_opengl/6.1cubemaps_skybox/cubemaps.frag</file>
         <file>4.advanced_opengl/6.1cubemaps_skybox/cubemaps.vert</file>
         <file>4.advanced_opengl/6.1cubemaps_skybox/skybox.frag</file>
@@ -111,6 +95,5 @@
         <file>4.advanced_opengl/10.3asteroids_instanced/planet.vert</file>
         <file>5.advanced_lighting/1.advanced_lighting/advanced_lighting.frag</file>
         <file>5.advanced_lighting/1.advanced_lighting/advanced_lighting.vert</file>
-        <file>resources/textures/wood.png</file>
     </qresource>
 </RCC>

@@ -18,3 +18,5 @@ target_link_libraries(learnopengl PRIVATE assimp::assimp)
 target_link_libraries(learnopengl PRIVATE Qt5::Gui Qt5::OpenGL)
 
 target_include_directories(learnopengl PRIVATE .)
+
+target_compile_definitions(learnopengl PRIVATE SRC_PATH=${PROJECT_SOURCE_DIR})

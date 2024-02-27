@@ -13,7 +13,17 @@ learn opengl with Qt, and it's directory structure is mostly like the [origin on
 
 ### run
 
-* open the file ```learnopengl-qt.pro``` with QtCreator
+* open the file ```CMakeLists.txt``` with VS/VSCode/QtCreator or other IDEs, 
+
+  if you want to build in command line:
+  ```
+  mkdir build
+  cd build
+  cmake ..
+  cmake --build . --config Release
+  ```
+  then all the things will be builded to `build/bin`
+ 
 * run it in debug/release mode
 * select a widget to show
 
@@ -97,3 +107,6 @@ learn opengl with Qt, and it's directory structure is mostly like the [origin on
     }
     
     ```
+
+3. [learnopengl Model-Loading](https://learnopengl.com/Model-Loading/Model) does not support 3D formats with embedded textures, 
+   so don't use .glb .gltf or other formats.

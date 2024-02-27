@@ -18,6 +18,17 @@ learn opengl with Qt, and it's directory structure is mostly like the [origin on
 * select a widget to show
 
     ![main window](./resources/readme/window.png)
+* for camera control, default key map is as follows, if you select a widget and find no cursor, just press `Q` to disable camera control
+
+  | dir | key |
+  | --- | --- |
+  | forward | w |
+  | backward | s |
+  | left | a |
+  | right | d |
+  | disable | q |
+  | enable | e |
+
 
 ## How to add a new widget
 

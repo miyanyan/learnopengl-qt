@@ -13,7 +13,7 @@ ModelUtil::ModelUtil(QString path, QOpenGLContext* context)
     , m_scaleFactor(1.0)
 {
     Assimp::Importer import;
-    const aiScene *scene = import.ReadFile(directory.absolutePath().toLocal8Bit(), aiProcess_Triangulate | aiProcess_GenSmoothNormals | aiProcess_FlipUVs | aiProcess_CalcTangentSpace);
+    const aiScene *scene = import.ReadFile(directory.absolutePath().toUtf8(), aiProcess_Triangulate | aiProcess_GenSmoothNormals | aiProcess_FlipUVs | aiProcess_CalcTangentSpace);
     if (!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode) {
         qDebug() << "ERROR::ASSIMP::"<<import.GetErrorString() << endl;
         return;
